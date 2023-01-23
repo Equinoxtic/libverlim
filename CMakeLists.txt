@@ -16,12 +16,21 @@ set(AMIXLIB_SYS
 	lib/sys/amixcalls.cpp
 )
 
+set(AMIXLIB_FS
+	lib/fs/file.h
+	lib/fs/file.cpp
+	lib/fs/fileutils.h
+	lib/fs/fileutils.cpp
+)
+
 source_group("lib" FILES ${AMIXLIB_LIB})
 source_group("lib\\sys" FILES ${AMIXLIB_SYS})
+source_group("lib\\fs" FILES ${AMIXLIB_FS})
 
 set(AMIXSOURCE
 	${AMIXLIB_LIB}
 	${AMIXLIB_SYS}
+	${AMIXLIB_FS}
 )
 
 link_directories(${AMIXSOURCE})
