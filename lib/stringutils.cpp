@@ -12,3 +12,14 @@ std::string quote_str(std::string s)
 {
 	return wrap_str(s, "\"", "\"");
 }
+
+bool compare_str(std::string a, std::string b)
+{
+	return (a == b);
+}
+
+bool str_empty(std::string s)
+{
+	return (s.empty());
+}
+

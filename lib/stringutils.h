@@ -5,5 +5,7 @@
 
 std::string wrap_str(std::string s, std::string a, std::string b);
 std::string quote_str(std::string s);
+bool compare_str(std::string a, std::string b);
+bool str_empty(std::string s);
 
 #endif // STRINGUTILS_H_
