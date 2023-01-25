@@ -61,6 +61,7 @@ include_directories(
 	lib
 	fs
 	logging
+	include/libverlim
 )
 
 add_library(verlimsrc STATIC ${VERLIM_SRC})
