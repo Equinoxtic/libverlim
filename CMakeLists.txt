@@ -7,6 +7,8 @@ set(AMIXLIB_LIB
 	lib/stringutils.cpp
 	lib/thread.h
 	lib/thread.cpp
+	lib/rtime.h
+	lib/rtime.cpp
 )
 
 set(AMIXLIB_SYS
@@ -16,21 +18,33 @@ set(AMIXLIB_SYS
 	lib/sys/amixcalls.cpp
 )
 
-set(AMIXLIB_FS
-	lib/fs/file.h
-	lib/fs/file.cpp
-	lib/fs/fileutils.h
-	lib/fs/fileutils.cpp
+set(AMIXFS
+	fs/file.h
+	fs/file.cpp
+	fs/fileutils.h
+	fs/fileutils.cpp
+	fs/paths.h
+	fs/paths.cpp
 )
 
 source_group("lib" FILES ${AMIXLIB_LIB})
 source_group("lib\\sys" FILES ${AMIXLIB_SYS})
 source_group("lib\\fs" FILES ${AMIXLIB_FS})
 
+set(AMIXLIB_LOGGING
+	logging/consolemsg.h
+	logging/consolemsg.cpp
+	logging/logger.cpp
+	logging/logger.h
+)
+
+source_group("logging" FILES ${AMIXLIB_LOGGING})
+
 set(AMIXSOURCE
 	${AMIXLIB_LIB}
 	${AMIXLIB_SYS}
-	${AMIXLIB_FS}
+	${AMIXFS}
+	${AMIXLIB_LOGGING}
 )
 
 link_directories(${AMIXSOURCE})
