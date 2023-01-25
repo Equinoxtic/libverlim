@@ -12,7 +12,7 @@ static inline std::string errcreate(std::string errmsg)
 {
 	std::string f_err_msg;
 	if (!str_empty(errmsg))
-		f_err_msg = ERR_HEADER + ": " + errmsg;
+		f_err_msg = std::string(ERR_HEADER) + ": " + errmsg;
 	return f_err_msg;
 }
 
