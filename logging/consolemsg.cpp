@@ -28,7 +28,7 @@ std::string create_consolemsg_flag(std::string flagtype, std::string target, std
 
 	std::string flag_s;
 	if (!str_empty(flagtype)) {
-		if (compare_str(flagtype, "err") || compare_str("error"))
+		if (compare_str(flagtype, "err") || compare_str(flagtype, "error"))
 			flag_s = ERR_HEADER;
 		else if (compare_str(flagtype, "warn"))
 			flag_s = WARN_HEADER;
