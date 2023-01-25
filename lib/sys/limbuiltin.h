@@ -1,5 +1,5 @@
-#ifndef AMIXCALLS_H_
-#define AMIXCALLS_H_
+#ifndef LIMBUILTIN_H_
+#define LIMBUILTIN_H_
 
 #include<stdlib.h>
 
@@ -7,4 +7,4 @@ void syspause();
 void screenclear();
 void sysexit();
 
-#endif // AMIXCALLS_H_
+#endif // LIMBUILTIN_H_

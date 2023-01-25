@@ -1,13 +1,13 @@
 #include "./fileutils.h"
 #include "./file.h"
-#include "sys/sysamix.h"
+#include "sys/limsys.h"
 
 void create_file(std::string f)
 {
 	#ifdef _WIN32
-		syscmd("type nul > " + f);
+		sysexec("type nul > " + f);
 	#else
-		syscmd("touch " + f);
+		sysexec("touch " + f);
 	#endif
 }
 
