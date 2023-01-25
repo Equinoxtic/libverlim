@@ -1,7 +1,5 @@
 #include "stringutils.h"
 #include "thread.h"
-#include "sys/sysamix.h"
-#include "sys/amixcalls.h"
 #include "fs/fileutils.h"
 #include "fs/file.h"
 #include<iostream>
@@ -11,7 +9,7 @@ void demo_loader()
 {
 	std::string current_os = get_platform();
 
-	std::cout << "\n" << wrap_str("Running AmiXLib Demo", "-----<", ">-----") << "\n"
+	std::cout << "\n" << wrap_str("Running LibVerlim Demo", "-----<", ">-----") << "\n"
 			  << "Current OS: " << current_os << "\n"
 			  << "Press Enter to Continue. Enjoy!";
 
