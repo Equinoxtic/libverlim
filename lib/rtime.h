@@ -2,6 +2,7 @@
 #define RTIME_H_
 
 #include<string>
+#include<ctime>
 
 std::string get_time();
 std::string get_date();
