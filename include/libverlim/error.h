@@ -6,13 +6,11 @@
 #include<string>
 #include<iostream>
 
-#define ERR_HEADER "[ERROR]"
-
 static inline std::string errcreate(std::string errmsg)
 {
 	std::string f_err_msg;
 	if (!str_empty(errmsg))
-		f_err_msg = std::string(ERR_HEADER) + ": " + errmsg;
+		f_err_msg = "[ERROR]: " + errmsg;
 	return f_err_msg;
 }
 
@@ -23,6 +21,7 @@ static inline std::string errtyped(std::string errmsg, std::string errtype)
 		if (compare_str(errtype, "default"))
 			f_err_msg = errcreate(errmsg);
 	}
+	return f_err_msg;
 }
 
 static inline void errput(std::string errmsg, std::string errtype = "default", bool force_exit = false)

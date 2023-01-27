@@ -5,13 +5,11 @@
 #include<string>
 #include<iostream>
 
-#define WARN_HEADER "[WARNING]"
-
 static inline std::string warncreate(std::string warnmsg)
 {
 	std::string f_warn_msg;
 	if (!str_empty(warnmsg))
-		f_warn_msg = std::string(WARN_HEADER) + ": " + warnmsg;
+		f_warn_msg = "[WARNING]: " + warnmsg;
 	return f_warn_msg;
 }
 
