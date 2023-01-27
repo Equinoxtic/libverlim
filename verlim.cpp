@@ -10,7 +10,7 @@
 
 void demo_loader()
 {
-	log_message("Running LibVerlim Demo!", "logs/log.txt");
+	log_message("Running LibVerlim Demo!");
 	
 	std::string current_os = get_platform();
 
@@ -26,7 +26,7 @@ void demo_loader()
 int main(int argc, char **argv)
 {
 	demo_loader();
-	log_message("LibVerlim Console launched!", "logs/log.txt");
+	log_message("LibVerlim Console launched!");
 	thread_pause();
 	screenclear();
 }
