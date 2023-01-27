@@ -10,7 +10,7 @@ std::string create_console_msg(std::string c, bool include_time)
 	std::string f_cmsg;
 	if (!str_empty(c)) {
 		if (include_time)
-			f_cmsg = wrap_str("CONSOLE @ " + get_time_and_date(), "[", "]") + ": " + quote_str(c);
+			f_cmsg = wrap_str("CONSOLE @ " + fmt_time(1, 1), "[", "]") + ": " + quote_str(c);
 		else
 			f_cmsg = wrap_str("CONSOLE", "[", "]") + ": " + quote_str(c);
 	}
