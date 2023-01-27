@@ -1,6 +1,6 @@
 #include "./consolemsg.h"
 #include "stringutils.h"
-#include "rtime.h"
+#include "timelib.h"
 #include "error.h"
 #include "warn.h"
 #include<iostream>
@@ -29,13 +29,13 @@ std::string create_consolemsg_flag(std::string flagtype, std::string target, std
 	std::string flag_s;
 	if (!str_empty(flagtype)) {
 		if (compare_str(flagtype, "err") || compare_str(flagtype, "error"))
-			flag_s = ERR_HEADER;
+			flag_s = wrap_str("ERROR", "[", "]");
 		else if (compare_str(flagtype, "warn"))
-			flag_s = WARN_HEADER;
+			flag_s = wrap_str("WARN", "[", "]");
 	}
 
-	if (!str_empty(target))
-		msg_flag_s = flag_s + " @\nReason: " + reason;
+	if (!str_empty(target) && !str_empty(reason))
+		msg_flag_s = flag_s + " @ " + target + "\nReason: " + reason;
 
 	return msg_flag_s;
 }

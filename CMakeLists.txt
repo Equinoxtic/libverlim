@@ -14,8 +14,7 @@ set(VERLIM_MAINLIB
 	lib/stringutils.cpp
 	lib/thread.h
 	lib/thread.cpp
-	lib/rtime.h
-	lib/rtime.cpp
+	lib/timelib.h
 )
 
 set(VERLIM_SYS
