@@ -35,7 +35,7 @@ std::string create_consolemsg_flag(std::string flagtype, std::string target, std
 	}
 
 	if (!str_empty(target) && !str_empty(reason))
-		msg_flag_s = flag_s + " @ " + target + "\nReason: " + reason;
+		msg_flag_s = flag_s + " @ " + target + "\n[Reason]: " + quote_str(reason);
 
 	return msg_flag_s;
 }
