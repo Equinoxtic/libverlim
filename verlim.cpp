@@ -4,6 +4,8 @@
 #include "fs/file.h"
 #include "sys/limsys.h"
 #include "sys/limbuiltin.h"
+#include "limio/limstdio.h"
+#include "limio/limioutils.h"
 #include "logger.h"
 #include<iostream>
 #include<string>
@@ -13,10 +15,10 @@ void demo_loader()
 	log_message("Running LibVerlim Demo!");
 	
 	std::string current_os = get_platform();
+	
+	std::string demo_title = wrap_str("Running LibVerlim Demo", "-----< ", " >-----") + "\n> Current OS: " + current_os + "\n" + "> Press Enter to Continue. Enjoy!";
 
-	std::cout << "\n" << wrap_str("Running LibVerlim Demo", "-----<", ">-----") << "\n"
-			  << "Current OS: " << current_os << "\n"
-			  << "Press Enter to Continue. Enjoy!";
+	typer(demo_title, demo_title.length());
 
 	thread_pause();
 
@@ -27,6 +29,5 @@ int main(int argc, char **argv)
 {
 	demo_loader();
 	log_message("LibVerlim Console launched!");
-	thread_pause();
 	screenclear();
 }
