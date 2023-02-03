@@ -37,6 +37,13 @@ source_group("lib" FILES ${VERLIM_MAINLIB})
 source_group("lib\\sys" FILES ${VERLIM_SYS})
 source_group("lib\\fs" FILES ${VERLIM_FS})
 
+set(VERLIMIO
+	limstd/limio/limstdio.h
+	limstd/limio/limioutils.h
+)
+
+source_group("limstd\\limio" FILES ${VERLIMIO})
+
 set(VERLIM_LOGGING
 	logging/consolemsg.h
 	logging/consolemsg.cpp
@@ -51,6 +58,7 @@ set(VERLIM_SRC
 	${VERLIM_MAINLIB}
 	${VERLIM_SYS}
 	${VERLIM_FS}
+	${VERLIMIO}
 	${VERLIM_LOGGING}
 )
 
@@ -61,6 +69,7 @@ include_directories(
 	lib
 	fs
 	logging
+	limstd
 	include/libverlim
 )
 
