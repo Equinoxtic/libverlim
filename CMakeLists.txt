@@ -44,6 +44,12 @@ set(VERLIMIO
 
 source_group("limstd\\limio" FILES ${VERLIMIO})
 
+set(VERLIMCOMMON
+	common/version.h
+)
+
+source_group("common" FILES ${VERLIMCOMMON})
+
 set(VERLIM_LOGGING
 	logging/consolemsg.h
 	logging/consolemsg.cpp
@@ -59,6 +65,7 @@ set(VERLIM_SRC
 	${VERLIM_SYS}
 	${VERLIM_FS}
 	${VERLIMIO}
+	${VERLIMCOMMON}
 	${VERLIM_LOGGING}
 )
 
@@ -70,6 +77,7 @@ include_directories(
 	fs
 	logging
 	limstd
+	common
 	include/libverlim
 )
 
