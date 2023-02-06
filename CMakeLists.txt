@@ -5,6 +5,8 @@ project("verlimlib")
 set(VERLIM_INCLUDE
 	include/libverlim/error.h
 	include/libverlim/warn.h
+	include/libverlim/vtime.h
+	include/verlim.h
 )
 
 source_group("include\\libverlim" FILES ${VERLIM_INCLUDE})
@@ -78,6 +80,7 @@ include_directories(
 	logging
 	limstd
 	common
+	include
 	include/libverlim
 )
 
