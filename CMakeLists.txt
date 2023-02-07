@@ -48,6 +48,7 @@ source_group("limstd\\limio" FILES ${VERLIMIO})
 
 set(VERLIMCOMMON
 	common/version.h
+	common/info.h
 )
 
 source_group("common" FILES ${VERLIMCOMMON})
