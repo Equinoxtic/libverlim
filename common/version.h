@@ -10,6 +10,8 @@ inline static std::string get_lib_version()
 	std::string ret_s;
 	if (file_exists("res/libversion.txt"))
 		ret_s = read_file("res/libversion.txt");
+	else
+		ret_s = "NO FILE.";
 	return ret_s;
 }
 
