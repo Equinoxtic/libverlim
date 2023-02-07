@@ -12,7 +12,7 @@ void demo_loader()
 	demo_title.append("\n" + get_lib_info());
 	demo_title.append("\n> Current OS: " + current_os);
 	demo_title.append("\n> LibVerlim version: " + get_lib_version());
-	demo_title.append("\n> Press Enter to Continue. Enjoy!");
+	demo_title.append("> Press Enter to Continue. Enjoy!");
 
 	typer(demo_title, demo_title.length());
 
