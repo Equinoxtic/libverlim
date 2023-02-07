@@ -8,5 +8,8 @@
 #include "limio/limioutils.h"
 #include "logger.h"
 #include "version.h"
+#include "info.h"
 #include<iostream>
 #include<string>
+
+// ...
