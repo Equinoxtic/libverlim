@@ -12,15 +12,16 @@ void write_to_file(std::string _path, std::string c)
 
 std::string read_file(std::string _path)
 {
-	std::string ln, ret_f;
+	std::string ret_f;
 	std::ifstream f(_path);
 	if (f.is_open()) {
-		while (std::getline(f, ln))
-			ret_f = ln;
-		f.close();
+		std::ostringstream ss;
+		ss << f.rdbuf();
+		ret_f = ss.str();
 	} else {
 		std::cout << "Unable to read file: " << _path;
 	}
+	f.close();
 	return ret_f;
 }
 
