@@ -3,6 +3,7 @@
 
 #include<string>
 #include<iostream>
+#include<sstream>
 #include<fstream>
 
 void write_to_file(std::string _path, std::string c);
