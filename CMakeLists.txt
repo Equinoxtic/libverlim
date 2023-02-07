@@ -2,6 +2,15 @@ cmake_minimum_required(VERSION 3.2)
 
 project("verlimlib")
 
+set(VERLIM_ADDONS
+	addons/liboptions/option.cpp
+	addons/liboptions/option.h
+	addons/liboptions/optionmenu.cpp
+	addons/liboptions/optionmenu.h
+)
+
+source_group("addons\\liboptions" FILES ${VERLIM_ADDONS})
+
 set(VERLIM_INCLUDE
 	include/libverlim/error.h
 	include/libverlim/warn.h
@@ -63,6 +72,7 @@ set(VERLIM_LOGGING
 source_group("logging" FILES ${VERLIM_LOGGING})
 
 set(VERLIM_SRC
+	${VERLIM_ADDONS}
 	${VERLIM_INCLUDE}
 	${VERLIM_MAINLIB}
 	${VERLIM_SYS}
@@ -83,6 +93,7 @@ include_directories(
 	common
 	include
 	include/libverlim
+	addons
 )
 
 add_library(verlimsrc STATIC ${VERLIM_SRC})
