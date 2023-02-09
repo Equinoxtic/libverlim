@@ -71,6 +71,13 @@ set(VERLIM_LOGGING
 
 source_group("logging" FILES ${VERLIM_LOGGING})
 
+set(VERLIM_HTTP
+	http/link.h
+	http/link.cpp
+)
+
+source_group("http" FILES ${VERLIM_HTTP})
+
 set(VERLIM_SRC
 	${VERLIM_ADDONS}
 	${VERLIM_INCLUDE}
@@ -80,6 +87,7 @@ set(VERLIM_SRC
 	${VERLIMIO}
 	${VERLIMCOMMON}
 	${VERLIM_LOGGING}
+	${VERLIM_HTTP}
 )
 
 link_directories(${VERLIM_SRC})
@@ -94,6 +102,7 @@ include_directories(
 	include
 	include/libverlim
 	addons
+	http
 )
 
 add_library(verlimsrc STATIC ${VERLIM_SRC})
