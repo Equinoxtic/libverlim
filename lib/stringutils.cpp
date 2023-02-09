@@ -13,6 +13,11 @@ std::string quote_str(std::string s)
 	return wrap_str(s, "\"", "\"");
 }
 
+bool starts_with(const std::string& str, const std::string& prefix)
+{
+	return (str.size() >= prefix.size() && str.compare(0, prefix.size(), prefix)) == 0;
+}
+
 bool compare_str(std::string a, std::string b)
 {
 	return (a == b);
