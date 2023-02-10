@@ -34,11 +34,15 @@ std::string create_typed_link(std::string link_s, std::string type_s)
 
 void open_link(std::string link_s)
 {
-	std::string f_link
-	if (!str_empty(link_s))
-		f_link = create_link(link_s);
-	else
+	std::string f_link;
+	if (!str_empty(link_s)) {
+		if (!find_str(link_s, "https://") || !find_str(link_s, "http://"))
+			f_link = create_link(link_s);
+		else
+			f_link = link_s;
+	} else {
 		f_link = create_link("google.com");
+	}
 	#ifdef _WIN32
 	sysexec("start " + f_link);
 	#else
@@ -51,7 +55,10 @@ void curl_link(std::string link_s)
 {
 	std::string f_link
 	if (!str_empty(link_s))
-		f_link = create_link(link_s);
+		if (!find_str(link_s, "https://") || !find_str(link_s, "http://"))
+			f_link = create_link(link_s);
+		else
+			f_link = link_s;
 	else
 		f_link = create_link("google.com");
 	sysexec("curl " + f_link);
