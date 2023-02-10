@@ -74,6 +74,7 @@ source_group("logging" FILES ${VERLIM_LOGGING})
 set(VERLIM_HTTP
 	http/link.h
 	http/link.cpp
+	http/browser.h
 )
 
 source_group("http" FILES ${VERLIM_HTTP})
