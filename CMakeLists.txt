@@ -21,6 +21,7 @@ set(VERLIM_INCLUDE
 source_group("include\\libverlim" FILES ${VERLIM_INCLUDE})
 
 set(VERLIM_MAINLIB
+	lib/convert.h
 	lib/stringutils.h
 	lib/stringutils.cpp
 	lib/thread.h
@@ -79,6 +80,13 @@ set(VERLIM_HTTP
 
 source_group("http" FILES ${VERLIM_HTTP})
 
+set(VERLIM_MATH
+	math/libyield/percentage.h
+	math/libyield/yield.h
+)
+
+source_group("math\\libyield" FILES ${VERLIM_MATH})
+
 set(VERLIM_SRC
 	${VERLIM_ADDONS}
 	${VERLIM_INCLUDE}
@@ -89,6 +97,7 @@ set(VERLIM_SRC
 	${VERLIMCOMMON}
 	${VERLIM_LOGGING}
 	${VERLIM_HTTP}
+	${VERLIM_MATH}
 )
 
 link_directories(${VERLIM_SRC})
@@ -104,6 +113,7 @@ include_directories(
 	include/libverlim
 	addons
 	http
+	math
 )
 
 add_library(verlimsrc STATIC ${VERLIM_SRC})
