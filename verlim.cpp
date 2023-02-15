@@ -14,7 +14,7 @@ void demo_loader()
 	demo_title.append("\n> LibVerlim version: " + get_lib_version());
 	demo_title.append("> Press Enter to Continue. Enjoy!");
 
-	typer(demo_title, demo_title.length());
+	typer(demo_title, demo_title.length(), 7);
 
 	thread_pause();
 
