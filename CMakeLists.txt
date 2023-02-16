@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-project("verlimlib")
+project("verlimlib" VERSION 0.4 DESCRIPTION "LibVerlim Project by Lunaxtic")
 
 set(VERLIM_ADDONS
 	addons/liboptions/option.cpp
@@ -100,8 +100,6 @@ set(VERLIM_SRC
 	${VERLIM_MATH}
 )
 
-link_directories(${VERLIM_SRC})
-
 include_directories(
 	BEFORE
 	lib
@@ -117,8 +115,5 @@ include_directories(
 )
 
 add_library(verlimsrc STATIC ${VERLIM_SRC})
-
 add_executable(verlimdemo verlim.cpp)
-
 target_link_libraries(verlimdemo verlimsrc)
-
