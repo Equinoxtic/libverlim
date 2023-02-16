@@ -33,3 +33,7 @@ void advanced_log(std::string msg,
 	write_to_file(logfile_path, f_msg + f_info);
 }
 
+void clear_logfile(std::string path)
+{
+	clear_file(path);
+}

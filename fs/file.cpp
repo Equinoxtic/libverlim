@@ -10,6 +10,16 @@ void write_to_file(std::string _path, std::string c)
 	}
 }
 
+void override_file(std::string _path, std::string c)
+{
+	std::ofstream f(_path, std::ios::in);
+	if (f.is_open()) {
+		f << c; f.close();
+	} else {
+		std::cout << "Unable to write to file: " << _path;
+	}
+}
+
 std::string read_file(std::string _path)
 {
 	std::string ret_f;

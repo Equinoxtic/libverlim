@@ -7,6 +7,7 @@
 #include<fstream>
 
 void write_to_file(std::string _path, std::string c);
+void override_file(std::string _path, std::string c);
 std::string read_file(std::string _path);
 void file_out(std::string _path);
 

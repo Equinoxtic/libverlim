@@ -31,7 +31,7 @@ static inline std::string errcreate_advanced(std::string errmsg, std::string rea
 	std::string f_err_msg;
 
 	f_err_msg.append("[ ! ERROR ! ]\n> ");
-
+ 
 	if (!str_empty(errmsg)) {
 		std::string newerrmsg;
 		if (is_quoted)

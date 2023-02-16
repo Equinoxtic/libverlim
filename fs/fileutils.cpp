@@ -13,7 +13,7 @@ void create_file(std::string f)
 
 void clear_file(std::string _path)
 {
-	write_to_file(_path, "");
+	override_file(_path, "");
 }
 
 bool file_exists(const std::string &_path)
