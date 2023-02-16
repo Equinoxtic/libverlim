@@ -9,5 +9,6 @@ void advanced_log(std::string msg,
 				  std::string msg_code,
 				  std::string addinfo,
 				  std::string logfile_path = "logs/log.txt");
+void clear_logfile(std::string path = "logs/log.txt");
 
 #endif // LOGGER_H_
