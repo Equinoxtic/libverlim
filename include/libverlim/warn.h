@@ -19,6 +19,8 @@ static inline std::string typedwarn(std::string warnmsg, std::string warntype)
 	if (!str_empty(warnmsg) && !str_empty(warntype)) {
 		if (compare_str(warntype, "default"))
 			f_warn_msg = warncreate(warnmsg);
+		else if (compare_str(warntype, "quoted"))
+			f_warn_msg = warncreate(quote_str(warnmsg));
 	}
 	return f_warn_msg;
 }
