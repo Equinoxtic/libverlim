@@ -12,7 +12,7 @@ void write_to_file(std::string _path, std::string c)
 
 void override_file(std::string _path, std::string c)
 {
-	std::ofstream f(_path, std::ios::in);
+	std::ofstream f(_path);
 	if (f.is_open()) {
 		f << c; f.close();
 	} else {
