@@ -13,6 +13,14 @@ std::string quote_str(std::string s)
 	return wrap_str(s, "\"", "\"");
 }
 
+std::string repeat_str(std::string s, int times)
+{
+	std::string f;
+	for (int i = 0; i < times; ++i)
+		f.append(s);
+	return f;
+}
+
 bool starts_with(const std::string& str, const std::string& prefix)
 {
 	return (str.size() >= prefix.size() && str.compare(0, prefix.size(), prefix)) == 0;
