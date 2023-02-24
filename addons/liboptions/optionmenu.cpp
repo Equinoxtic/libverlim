@@ -1,6 +1,6 @@
 #include "optionmenu.h"
-#include "stringutils.h"
-#include "logger.h"
+#include "../../lib/stringutils.h"
+#include "../../logging/logger.h"
 
 void create_options_menu(OptionMenu *menu, std::string basename, std::string menuname)
 {	

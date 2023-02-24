@@ -1,7 +1,8 @@
 #ifndef LIMSTDIO_H_
 #define LIMSTDIO_H_
 
-#include "stringutils.h"
+#include "../../lib/stringutils.h"
+#include<iostream>
 #include<string>
 
 inline static void printstr(std::string c, std::string end = "\n")

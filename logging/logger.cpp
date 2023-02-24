@@ -1,8 +1,8 @@
 #include "./logger.h"
 #include "./consolemsg.h"
-#include "stringutils.h"
-#include "file.h"
-#include "fileutils.h"
+#include "../lib/stringutils.h"
+#include "../fs/file.h"
+#include "../fs/fileutils.h"
 
 void log_message(std::string msg, std::string logfile_path)
 {

@@ -4,10 +4,10 @@
 #include<string>
 #include<iostream>
 #include<vector>
-#include "sys/limsys.h"
+#include "../lib/sys/limsys.h"
 #include "link.h"
-#include "stringutils.h"
-#include "logger.h"
+#include "../lib/stringutils.h"
+#include "../logging/logger.h"
 
 inline static std::string browser_getlink(std::string link_s)
 {

@@ -1,6 +1,6 @@
 #include "link.h"
-#include "stringutils.h"
-#include "sys/limsys.h"
+#include "../lib/stringutils.h"
+#include "../lib/sys/limsys.h"
 
 std::string create_link(std::string link_s)
 {

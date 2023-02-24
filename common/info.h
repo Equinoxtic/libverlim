@@ -2,8 +2,8 @@
 #define INFO_H_
 
 #include<string>
-#include "fileutils.h"
-#include "file.h"
+#include "../fs/fileutils.h"
+#include "../fs/file.h"
 
 inline static std::string get_lib_info()
 {
