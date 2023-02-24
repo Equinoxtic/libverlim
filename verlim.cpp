@@ -1,4 +1,5 @@
 #include "verlim.h"
+#include "addons/libshell/shell.h"
 
 void demo_loader()
 {
@@ -26,6 +27,6 @@ int main(int argc, char **argv)
 	clear_logfile();
 	demo_loader();
 	log_message("LibVerlim Console launched!");
-	screenclear();
+	put_shell("er", "er", false);
 	clear_logfile();
 }
