@@ -7,9 +7,11 @@ set(VERLIM_ADDONS
 	addons/liboptions/option.h
 	addons/liboptions/optionmenu.cpp
 	addons/liboptions/optionmenu.h
+	addons/libshell/shell.cpp
+	addons/libshell/shell.h
 )
 
-source_group("addons\\liboptions" FILES ${VERLIM_ADDONS})
+source_group("addons" FILES ${VERLIM_ADDONS})
 
 set(VERLIM_INCLUDE
 	include/libverlim/error.h
