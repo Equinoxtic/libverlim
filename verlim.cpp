@@ -27,6 +27,6 @@ int main(int argc, char **argv)
 	clear_logfile();
 	demo_loader();
 	log_message("LibVerlim Console launched!");
-	put_shell("er", "er", false);
 	clear_logfile();
+	screenclear();
 }
