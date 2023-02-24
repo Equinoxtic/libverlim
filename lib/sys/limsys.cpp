@@ -1,5 +1,5 @@
 #include "./limsys.h"
-#include "stringutils.h"
+#include "../stringutils.h"
 #include<iostream>
 
 std::string get_platform()

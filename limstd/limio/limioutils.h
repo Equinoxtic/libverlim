@@ -1,8 +1,8 @@
 #ifndef LIMIOUTILS_H_
 #define LIMIOUTILS_H_
 
-#include "stringutils.h"
-#include "thread.h"
+#include "../../lib/stringutils.h"
+#include "../../lib/thread.h"
 #include<iostream>
 #include<string>
 

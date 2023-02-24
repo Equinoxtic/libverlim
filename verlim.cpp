@@ -1,5 +1,4 @@
-#include "verlim.h"
-#include "addons/libshell/shell.h"
+#include "include/verlim.h"
 
 void demo_loader()
 {

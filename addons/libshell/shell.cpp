@@ -1,5 +1,5 @@
 #include "./shell.h"
-#include "stringutils.h"
+#include "../../lib/stringutils.h"
 
 std::string create_shell(std::string usr, std::string env)
 {

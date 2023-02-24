@@ -1,8 +1,8 @@
 #ifndef ERROR_H_
 #define ERROR_H_
 
-#include "stringutils.h"
-#include "sys/limbuiltin.h"
+#include "../../lib/stringutils.h"
+#include "../../lib/sys/limbuiltin.h"
 #include<string>
 #include<iostream>
 

@@ -2,8 +2,8 @@
 #define VERSION_H_
 
 #include<string>
-#include "file.h"
-#include "fileutils.h"
+#include "../fs/file.h"
+#include "../fs/fileutils.h"
 
 inline static std::string get_lib_version()
 {

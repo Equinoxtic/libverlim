@@ -1,8 +1,8 @@
 #include "./consolemsg.h"
-#include "stringutils.h"
-#include "timelib.h"
-#include "error.h"
-#include "warn.h"
+#include "../lib/stringutils.h"
+#include "../lib/timelib.h"
+#include "../include/libverlim/error.h"
+#include "../include/libverlim/warn.h"
 #include<iostream>
 
 std::string create_console_msg(std::string c, bool include_time)

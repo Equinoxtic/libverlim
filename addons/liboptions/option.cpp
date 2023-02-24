@@ -1,5 +1,5 @@
 #include "option.h"
-#include "stringutils.h"
+#include "../../lib/stringutils.h"
 
 void set_option(Option *option, std::string name,
 				std::string desc, std::string surround_type,

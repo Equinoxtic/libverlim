@@ -2,7 +2,6 @@
 #define LOGGER_H_
 
 #include<string>
-#include "paths.h"
 
 void log_message(std::string msg, std::string logfile_path = "logs/log.txt");
 void advanced_log(std::string msg,
