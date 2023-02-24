@@ -10,11 +10,7 @@
 
 void thread_pause(bool silent)
 {
-	std::string s;
-	if (!silent)
-		s = '\0';
-	else
-		s = "Press any key to continue... ";
+	std::string s = ((!silent) ? "\0" : "Press any key to continue...");
 	std::cout << s;
 	getchar();
 }
