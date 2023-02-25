@@ -1,3 +1,6 @@
+#ifndef INCLUDES_H_
+#define INCLUDES_H_
+
 #include "../lib/stringutils.h"
 #include "../lib/thread.h"
 #include "../fs/fileutils.h"
@@ -12,4 +15,4 @@
 #include<iostream>
 #include<string>
 
-// ...
+#endif // INCLUDES_H_
