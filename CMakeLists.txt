@@ -10,6 +10,8 @@ set(VERLIM_ADDONS
 	addons/libshell/shell.cpp
 	addons/libshell/shell.h
 	addons/libshell/shellenv.h
+	addons/display/bar.cpp
+	addons/display/bar.h
 )
 
 source_group("addons" FILES ${VERLIM_ADDONS})
@@ -18,7 +20,6 @@ set(VERLIM_INCLUDE
 	include/libverlim/error.h
 	include/libverlim/warn.h
 	include/libverlim/vtime.h
-	include/verlim.h
 )
 
 source_group("include\\libverlim" FILES ${VERLIM_INCLUDE})
@@ -90,6 +91,14 @@ set(VERLIM_MATH
 
 source_group("math\\libyield" FILES ${VERLIM_MATH})
 
+set(VERLIM_MAIN_SOURCE
+	source/includes.h
+	source/loader.h
+	source/verlim.h
+)
+
+source_group("source" FILES ${VERLIM_MAIN_SOURCE})
+
 set(VERLIM_SRC
 	${VERLIM_ADDONS}
 	${VERLIM_INCLUDE}
@@ -101,6 +110,7 @@ set(VERLIM_SRC
 	${VERLIM_LOGGING}
 	${VERLIM_HTTP}
 	${VERLIM_MATH}
+	${VERLIM_MAIN_SOURCE}
 )
 
 include_directories(
