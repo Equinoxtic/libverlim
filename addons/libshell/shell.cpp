@@ -1,5 +1,8 @@
 #include "./shell.h"
+#include "./shellenv.h"
 #include "../../lib/stringutils.h"
+#include "../../fs/file.h"
+#include "../../fs/fileutils.h"
 
 std::string create_shell(std::string usr, std::string env)
 {
@@ -38,4 +41,21 @@ std::string format_shell(std::string usr, std::string env, std::string env_symbo
 
 void put_shell(std::string usr, std::string env, bool formatted, std::string env_symbol, std::string ch) {
 	std::cout << ((!formatted) ? create_shell(usr, env) : format_shell(usr, env, env_symbol, ch));
+}
+
+void f_shell(std::string type)
+{
+	std::string s;
+	std::string defusrf = read_file("res/shell/usr.txt");
+	std::string defenvf = read_file("res/shell/env.txt");
+	if (!str_empty(type)) {
+		if (compare_str(type, "default")) {
+			s = create_shell(defusrf, ((!str_empty(defenvf) && file_exists(defenvf)) ? defenvf : auto_env()));
+		} else if (compare_str(type, "custom")) {
+			s = read_file("res/shell/customshell.txt");
+		}
+	} else {
+		s = create_shell(defusrf, ((!str_empty(defenvf) && file_exists(defenvf)) ? defenvf : auto_env()));
+	}
+	std::cout << s;
 }
