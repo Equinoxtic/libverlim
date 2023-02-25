@@ -16,6 +16,13 @@ inline static void o_tab() { std::cout << "\t"; }
 inline static void o_vtab() { std::cout << "\v"; }
 inline static void o_bkspc() { std::cout << "\b"; }
 
+inline static void f_printstr(std::string s, int times = 1, std::string end = "\n")
+{
+	for (int i = 0; i < times; ++i)
+		std::cout << s;
+	std::cout << (compare_str(end, "\n") ? "\n" : end);
+}
+
 inline static void typer(std::string &s, int len, unsigned del = 25)
 {
 	if (!str_empty(s) && s.length() >= 1) {
