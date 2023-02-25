@@ -9,6 +9,7 @@ set(VERLIM_ADDONS
 	addons/liboptions/optionmenu.h
 	addons/libshell/shell.cpp
 	addons/libshell/shell.h
+	addons/libshell/shellenv.h
 )
 
 source_group("addons" FILES ${VERLIM_ADDONS})

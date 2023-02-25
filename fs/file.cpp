@@ -1,10 +1,10 @@
 #include "./file.h"
 
-void write_to_file(std::string _path, std::string c)
+void write_to_file(std::string _path, std::string c, bool newline)
 {
 	std::ofstream f(_path, std::ios::app);
 	if (f.is_open()) {
-		f << c << "\n"; f.close();
+		f << c << ((newline) ? "\n" : ""); f.close();
 	} else {
 		std::cout << "Unable to write to file: " << _path;
 	}
