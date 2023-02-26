@@ -31,6 +31,8 @@ set(VERLIM_MAINLIB
 	lib/thread.h
 	lib/thread.cpp
 	lib/timelib.h
+	lib/mem.h
+	lib/winmem.h
 )
 
 set(VERLIM_SYS
