@@ -19,7 +19,7 @@ void display_virtmem(std::string fmt) {
 		#ifdef _WIN32
 		fprintf(stdout, "%zu", get_curproc_virtmem());
 		#else
-		fprintf(stdout, "%d", get_curproc_virtmem);
+		fprintf(stdout, "%d", get_curproc_virtmem());
 		#endif
 	}
 }
@@ -33,7 +33,7 @@ void display_ram(std::string fmt) {
 		#ifdef _WIN32
 		fprintf(stdout, "%zu", get_curproc_physmem());
 		#else
-		fprintf(stdout, "%d", get_curproc_virtmem);
+		fprintf(stdout, "%d", get_curproc_virtmem());
 		#endif
 	}
 }
