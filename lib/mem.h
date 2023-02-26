@@ -38,7 +38,7 @@ int parse_line(char *line) {
 	return i;
 }
 
-static inline int get_cur_virtmem() {
+static inline int get_curproc_virtmem() {
 	FILE *f = fopen("/proc/self/status", "r");
 	int res = -1;
 	char line[128];
@@ -68,7 +68,7 @@ static inline long long get_used_physmem() {
 	return usedvirtmem;
 }
 
-static inline int get_cur_physmem() {
+static inline int get_curproc_physmem() {
 	FILE *f = fopen("/proc/self/status", "r");
 	int res = -1;
 	char line[128];
