@@ -1,3 +1,3 @@
-if ([System.IO.File]::Exists("bin\Release\verlimdemo.exe")) {
-	start "bin\Release\verlimdemo.exe"}
+if ([System.IO.File]::Exists("build\Release\verlimdemo.exe")) {
+	start "build\Release\verlimdemo.exe"}
 }
