@@ -12,6 +12,10 @@ set(VERLIM_ADDONS
 	addons/libshell/shellenv.h
 	addons/display/bar.cpp
 	addons/display/bar.h
+	addons/display/seperator.cpp
+	addons/display/seperator.h
+	addons/display/memstat.cpp
+	addons/display/memstat.h
 )
 
 source_group("addons" FILES ${VERLIM_ADDONS})

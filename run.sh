@@ -1,4 +1,4 @@
 #!/bin/sh
-if [ -f bin/Release/verlimdemo.exe ]; then
-	./bin/Release/verlimdemo.exe
+if [ -f build/Release/verlimdemo.exe ]; then
+	./build/Release/verlimdemo.exe
 fi

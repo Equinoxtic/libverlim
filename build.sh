@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [ ! -d bin  ]
+if [ ! -d build  ]
 then
-	mkdir bin
+	mkdir build
 fi
 
-cmake -G "Visual Studio 17 2022" -A Win32 -S . -B bin
-cmake --build bin --target verlimdemo --config Release
+cmake -G "Visual Studio 17 2022" -A Win32 -S . -B build
+cmake --build build --target verlimdemo --config Release
