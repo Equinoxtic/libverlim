@@ -53,14 +53,16 @@ void open_link(std::string link_s)
 #ifndef _WIN32
 void curl_link(std::string link_s)
 {
-	std::string f_link
-	if (!str_empty(link_s))
-		if (!find_str(link_s, "https://") || !find_str(link_s, "http://"))
+	std::string f_link;
+	if (!str_empty(link_s)) {
+		if (!find_str(link_s, "https://") || !find_str(link_s, "http://")) {
 			f_link = create_link(link_s);
-		else
+		} else {
 			f_link = link_s;
-	else
+		}
+	} else {
 		f_link = create_link("google.com");
+	}
 	sysexec("curl " + f_link);
 }
 #endif
