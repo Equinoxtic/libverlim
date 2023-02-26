@@ -47,7 +47,7 @@ static inline int get_curproc_virtmem() {
 			break;
 		}
 	}
-	fclose(file);
+	fclose(f);
 	return res;
 }
 
