@@ -1,7 +1,7 @@
 #include "./limbuiltin.h"
+#include <iostream>
 
-void syspause()
-{
+void syspause() {
 	#ifdef _WIN32
 		system("pause");
 	#else
@@ -9,8 +9,13 @@ void syspause()
 	#endif
 }
 
-void screenclear()
-{
+void syspauseexit() {
+	std::cout << "Press any key to continue...";
+	getchar();
+	exit(0);
+}
+
+void screenclear() {
 	#ifdef _WIN32
 		system("cls");
 	#else
@@ -18,7 +23,14 @@ void screenclear()
 	#endif
 }
 
-void sysexit()
-{
-	system("exit");
+void sysshowinfo() {
+	#ifdef _WIN32
+		system("systeminfo");
+	#else
+		system("uname -s");
+	#endif
+}
+
+void sysexit() {
+	exit(0);
 }

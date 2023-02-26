@@ -4,7 +4,9 @@
 #include<stdlib.h>
 
 void syspause();
+void syspauseexit();
 void screenclear();
+void sysshowinfo();
 void sysexit();
 
 #endif // LIMBUILTIN_H_
