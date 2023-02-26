@@ -25,7 +25,7 @@ unsigned get_sleep_time(unsigned ms)
 
 #ifdef _WIN32
 	
-	void sleep(unsigned ms) {
+	void s_sleep(unsigned ms) {
 		Sleep(get_sleep_time(ms));
 	}
 	
@@ -35,7 +35,7 @@ unsigned get_sleep_time(unsigned ms)
 
 #else
 	
-	void sleep(unsigned ms) {
+	void s_sleep(unsigned ms) {
 		usleep(get_sleep_time(ms));
 	}
 	
