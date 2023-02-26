@@ -27,7 +27,7 @@ void sysshowinfo() {
 	#ifdef _WIN32
 		system("systeminfo");
 	#else
-		system("uname -s");
+		system("uname");
 	#endif
 }
 
