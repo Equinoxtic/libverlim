@@ -86,6 +86,7 @@ set(VERLIM_HTTP
 	http/link.h
 	http/link.cpp
 	http/browser.h
+	http/browser.cpp
 )
 
 source_group("http" FILES ${VERLIM_HTTP})
