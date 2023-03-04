@@ -16,6 +16,14 @@ set(VERLIM_ADDONS
 	addons/display/seperator.h
 	addons/display/memstat.cpp
 	addons/display/memstat.h
+	addons/consoleui/dialoguebox.cpp
+	addons/consoleui/dialoguebox.h
+	addons/consoleui/optionbox.cpp
+	addons/consoleui/optionbox.h
+	addons/consoleui/textbox.cpp
+	addons/consoleui/textbox.h
+	addons/consoleui/titleheader.cpp
+	addons/consoleui/titleheader.h
 )
 
 source_group("addons" FILES ${VERLIM_ADDONS})
@@ -37,6 +45,7 @@ set(VERLIM_MAINLIB
 	lib/timelib.h
 	lib/mem.h
 	lib/winmem.h
+	lib/vectorutils.h
 )
 
 set(VERLIM_SYS
@@ -86,6 +95,7 @@ set(VERLIM_HTTP
 	http/link.h
 	http/link.cpp
 	http/browser.h
+	http/browser.cpp
 )
 
 source_group("http" FILES ${VERLIM_HTTP})

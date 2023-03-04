@@ -1,10 +1,12 @@
 #include "./stringutils.h"
+#include "vectorutils.h"
+#include<vector>
 
 std::string wrap_str(std::string s, std::string a, std::string b)
 {
-	std::string f_str;	f_str.append(a);
-						f_str.append(s);
-						f_str.append(b);
+	std::string f_str;
+	std::vector<std::string> vs = { a, s, b };
+	f_str = ret_vector_s(vs);
 	return f_str;
 }
 
