@@ -9,6 +9,14 @@ static inline std::string get_time() {
 	std::string tm = DEF_TIME; return tm;
 }
 
+static inline std::string get_hour_time() {
+	std::string tm = DEF_TIME; return tm.replace(tm.length() - 3, 3, "\0");
+}
+
+static inline std::string get_seconds_time() {
+	std::string tm = DEF_TIME; return tm.replace(1, 2, "\0");
+}
+
 static inline std::string get_date() {
 	std::string dt = DEF_DATE; return dt;
 }
