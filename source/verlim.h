@@ -11,7 +11,7 @@ inline static void setuplib()
 	};
 	for (size_t i = 0; i < compile_bin.size(); ++i) {
 		std::string path = "bin/" + compile_bin[i] + "/";
-		sysexec("make -s -C " + path);
+		sysexec("make -C " + path);
 	}
 }
 
