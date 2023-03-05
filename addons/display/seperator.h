@@ -3,7 +3,14 @@
 
 #include<string>
 
-void create_seperator(int length = 65);
-void formatted_seperator(std::string s, int length = 65);
+typedef struct {
+	std::string data;
+} Seperator;
+
+std::string create_seperator(int length = 65);
+std::string formatted_seperator(std::string s, int length = 65);
+void set_seperator(Seperator *sepptr, int length = 65);
+void set_formatted_seperator(Seperator *sepptr, std::string s, int length = 65);
+void display_seperator(Seperator *seperator);
 
 #endif // SEPERATOR_H_

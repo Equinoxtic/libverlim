@@ -27,4 +27,8 @@ inline static void printnbool(int x, std::string end = "\n") {
 	std::cout << bool_s << (compare_str(end, "\n") ? "\n" : end);
 }
 
+inline static void readstr(std::string &s) {
+	std::getline(std::cin, s);
+}
+
 #endif // LIMSTDIO_H_

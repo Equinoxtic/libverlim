@@ -12,7 +12,11 @@
 #include "../logging/logger.h"
 #include "../common/version.h"
 #include "../common/info.h"
+#include "../addons/libshell/shell.h"
+#include "../addons/display/seperator.h"
+#include "../parser/parser.h"
 #include<iostream>
 #include<string>
+#include<vector>
 
 #endif // INCLUDES_H_

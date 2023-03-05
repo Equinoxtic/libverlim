@@ -24,9 +24,20 @@ set(VERLIM_ADDONS
 	addons/consoleui/textbox.h
 	addons/consoleui/titleheader.cpp
 	addons/consoleui/titleheader.h
+	addons/libcommand/command.cpp
+	addons/libcommand/command.h
+	addons/libcommand/commandutils.cpp
+	addons/libcommand/commandutils.h
 )
 
 source_group("addons" FILES ${VERLIM_ADDONS})
+
+set(VERLIM_PARSER
+	parser/parser.cpp
+	parser/parser.h
+)
+
+source_group("parser" FILES ${VERLIM_PARSER})
 
 set(VERLIM_INCLUDE
 	include/libverlim/error.h
@@ -117,6 +128,7 @@ source_group("source" FILES ${VERLIM_MAIN_SOURCE})
 
 set(VERLIM_SRC
 	${VERLIM_ADDONS}
+	${VERLIM_PARSER}
 	${VERLIM_INCLUDE}
 	${VERLIM_MAINLIB}
 	${VERLIM_SYS}
