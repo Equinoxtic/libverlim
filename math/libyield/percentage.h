@@ -1,6 +1,8 @@
 #ifndef PERCENTAGE_H_
 #define PERCENTAGE_H_
 
+#include<string>
+
 static inline float to_percentage(float x) {
 	return (x * 100);
 }

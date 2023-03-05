@@ -1,6 +1,8 @@
 #ifndef VTIME_H_
 #define VTIME_H_
 
+#include<string>
+
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
 #define DEF_TIME TOSTRING(__TIME__)

@@ -30,7 +30,7 @@ void create_bar(unsigned delay, int len)
 	for (int i = 0; i < nlen; ++i) {
 		for (int k = 0; k < (nlen - nlen) + 1; ++k) 
 			nbar.insert(nbar.begin() + 1, "|");
-		for (int j = 0; j < nbar.size(); ++j)
+		for (size_t j = 0; j < nbar.size(); ++j)
 			std::cout << nbar[j];
 		ms_sleep(750);
 		for (int x = 0; x < (nlen - nlen) + 1; ++x)

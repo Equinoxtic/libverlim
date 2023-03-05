@@ -2,6 +2,7 @@
 #define LIMBUILTIN_H_
 
 #include<stdlib.h>
+#include<string>
 
 void syspause();
 void syspauseexit();
