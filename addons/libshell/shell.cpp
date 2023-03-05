@@ -46,7 +46,7 @@ void put_shell(std::string usr, std::string env, bool formatted, std::string env
 void f_shell(std::string type)
 {
 	std::string s;
-	std::string defusrf = read_file("res/shell/usr.txt");
+	std::string defusrf = read_file("res/shell/user.txt");
 	std::string defenvf = read_file("res/shell/env.txt");
 	if (!str_empty(type)) {
 		if (compare_str(type, "default")) {
