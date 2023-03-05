@@ -15,13 +15,17 @@ inline static void demo_loader()
 	
 	std::cout << demo_title;
 
-	std::string demo_vars;
-	demo_vars.append("\n" + get_lib_info());
-	demo_vars.append("\n> Current OS: " + current_os);
-	demo_vars.append("\n> LibVerlim version: " + get_lib_version());
-	demo_vars.append("> Press Enter to Continue. Enjoy!");
+	std::vector<std::string> demo_vs = {
+		"\n", get_lib_info(),
+		"\n", create_seperator(), "\n",
+		"\n> Current OS: ", current_os,
+		"\n> LibVerlim version: " + get_lib_version(),
+		"> Press Enter to Continue. Enjoy!"
+	};
 
-	typer(demo_vars, demo_vars.length(), 7);
+	for (size_t i = 0; i < demo_vs.size(); ++i) {
+		typer(demo_vs[i], demo_vs[i].length(), 5);
+	}
 
 	thread_pause();
 }
