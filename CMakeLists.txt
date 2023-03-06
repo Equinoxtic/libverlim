@@ -46,6 +46,7 @@ set(VERLIM_INCLUDE
 	include/libverlim/warn.h
 	include/libverlim/vtime.h
 	include/color.hpp
+	include/keyinput.hpp
 )
 
 source_group("include\\libverlim" FILES ${VERLIM_INCLUDE})
