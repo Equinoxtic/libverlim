@@ -20,7 +20,7 @@ inline static void demo_loader()
 		"\n", create_seperator(), "\n",
 		"\n> Current OS: ", current_os,
 		"\n> LibVerlim version: " + get_lib_version(),
-		"> Press Enter to Continue. Enjoy!"
+		"> Press Any Key to Continue. Enjoy!"
 	};
 
 	for (size_t i = 0; i < demo_vs.size(); ++i) {
@@ -30,9 +30,7 @@ inline static void demo_loader()
 	int input = getch();
 	if (input == 113) {
 		screenclear(); sysexit();
-	} else if (input == 13) {
-		screenclear();
-	}
+	} else { std::cout << "\0"; }
 }
 
 #endif // LOADER_H_
