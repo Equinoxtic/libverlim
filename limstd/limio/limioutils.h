@@ -6,12 +6,12 @@
 #include<iostream>
 #include<string>
 
-inline static std::string nl() { return "\n"; }
+inline static std::string newln() { return "\n"; }
 inline static std::string tab() { return "\t"; }
 inline static std::string vtab() { return "\v"; }
 inline static std::string bkspc() { return "\b"; }
 
-inline static void o_nl() { std::cout << "\n"; }
+inline static void o_newln() { std::cout << "\n"; }
 inline static void o_tab() { std::cout << "\t"; }
 inline static void o_vtab() { std::cout << "\v"; }
 inline static void o_bkspc() { std::cout << "\b"; }
