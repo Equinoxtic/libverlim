@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.2)
 
 project("verlimlib" VERSION 0.4 DESCRIPTION "LibVerlim Project by Lunaxtic")
 
+set(CMAKE_CXX_STANDARD 14)
+
 set(VERLIM_ADDONS
 	addons/liboptions/option.cpp
 	addons/liboptions/option.h
@@ -43,6 +45,7 @@ set(VERLIM_INCLUDE
 	include/libverlim/error.h
 	include/libverlim/warn.h
 	include/libverlim/vtime.h
+	include/color.hpp
 )
 
 source_group("include\\libverlim" FILES ${VERLIM_INCLUDE})
