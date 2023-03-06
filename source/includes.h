@@ -18,6 +18,10 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#ifdef _WIN32
 #include<conio.h>
+#else
+#include<ncurses.h>
+#endif
 
 #endif // INCLUDES_H_
