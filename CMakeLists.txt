@@ -55,6 +55,8 @@ set(VERLIM_MAINLIB
 	lib/convert.h
 	lib/stringutils.h
 	lib/stringutils.cpp
+	lib/chtools.h
+	lib/chtools.cpp
 	lib/thread.h
 	lib/thread.cpp
 	lib/timelib.h

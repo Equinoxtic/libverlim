@@ -7,7 +7,7 @@
 inline static void setuplib()
 {
 	std::vector<std::string> compile_bin = {
-		"help", "exit", "clear"
+		"help", "exit", "clear", "gitcpp"
 	};
 	for (size_t i = 0; i < compile_bin.size(); ++i) {
 		std::string path = "bin/" + compile_bin[i] + "/";
