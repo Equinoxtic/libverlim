@@ -27,7 +27,12 @@ inline static void demo_loader()
 		typer(demo_vs[i], demo_vs[i].length(), 5);
 	}
 
-	thread_pause();
+	int input = getch();
+	if (input == 113) {
+		screenclear(); sysexit();
+	} else if (input == 13) {
+		screenclear();
+	}
 }
 
 #endif // LOADER_H_
