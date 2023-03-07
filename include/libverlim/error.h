@@ -2,15 +2,19 @@
 #define ERROR_H_
 
 #include "../../lib/stringutils.h"
+#include "../../lib/vectorutils.h"
 #include "../../lib/sys/limbuiltin.h"
 #include<string>
 #include<iostream>
+#include<vector>
 
 static inline std::string errcreate(std::string errmsg)
 {
 	std::string f_err_msg;
-	if (!str_empty(errmsg))
-		f_err_msg = "[ERROR]: " + errmsg;
+	if (!str_empty(errmsg)) {
+		std::vector<std::string> vec_s = { "[ERROR]: ", errmsg };
+		f_err_msg = ret_vector_s(vec_s)
+	}
 	return f_err_msg;
 }
 
@@ -30,31 +34,21 @@ static inline std::string errcreate_advanced(std::string errmsg, std::string rea
 {
 	std::string f_err_msg;
 
-	f_err_msg.append("[ ! ERROR ! ]\n> ");
- 
-	if (!str_empty(errmsg)) {
-		std::string newerrmsg;
-		if (is_quoted)
-			newerrmsg = quote_str(errmsg);
-		else
-			newerrmsg = errmsg;
-		f_err_msg.append(newerrmsg);
-	} else {
-		f_err_msg.append("ERROR_STRING");
-	}
+	std::vector<std::string> vs = { "[ ! ERROR ! ]\n>" };
 
-	f_err_msg.append("\n(Reason): ");
+	if (!str_empty(errmsg))
+		vs.push_back((is_quoted) ? quote_str(errmsg) : errmsg);
+	else
+		vs.push_back("ERROR_STRING");
 
-	if (!str_empty(reason)) {
-		std::string newreason;
-		if (is_quoted)
-			newreason = quote_str(reason);
-		else
-			newreason = reason;
-		f_err_msg.append(newreason);
-	} else {
-		f_err_msg.append("REASON_STRING");
-	}
+	vs.push_back("\n(REASON): ");
+
+	if (!str_empty(reason))
+		vs.push_back((is_quoted) ? quote_str(reason) : reason);
+	else
+		vs.push_back("REASON_STRING");
+
+	f_err_msg = ret_vector_s(vs);
 
 	return f_err_msg;
 }

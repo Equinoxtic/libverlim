@@ -2,14 +2,18 @@
 #define WARN_H_
 
 #include "../../lib/stringutils.h"
+#include "../../lib/vectorutils.h"
 #include<string>
 #include<iostream>
+#include<vector>
 
 static inline std::string warncreate(std::string warnmsg)
 {
 	std::string f_warn_msg;
-	if (!str_empty(warnmsg))
-		f_warn_msg = "[WARNING]: " + warnmsg;
+	if (!str_empty(warnmsg)) {
+		std::vector<std::string> vec_s = { "[WARNING]: ", warnmsg };
+		f_warn_msg = ret_vector_s(vec_s)
+	}
 	return f_warn_msg;
 }
 
