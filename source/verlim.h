@@ -11,7 +11,7 @@ inline static void setuplib()
 	};
 	for (size_t i = 0; i < compile_bin.size(); ++i) {
 		std::string path = "bin/" + compile_bin[i] + "/";
-		sysexec("make -C " + path);
+		lsys::sysexec("make -C " + path);
 	}
 }
 
@@ -21,20 +21,20 @@ inline static void initialize(bool load)
 
 	if (load) {
 		setuplib();
-		clear_logfile();
+		logger::clear_logfile();
 		demo_loader();
-		log_message("LibVerlim console launched!");
-		screenclear();
+		logger::log_message("LibVerlim console launched!");
+		lsys::screenclear();
 	}
 
 	f_shell("custom");
-	readstr(in);
+	lstd::reads(in);
 	if (!str_empty(in)) parse_input(in);
 	
 	if (!compare_str(in, "exit")) {
 		initialize(false);
 	} else {
-		clear_logfile(); screenclear();
+		logger::clear_logfile(); lsys::screenclear();
 	}
 }
 

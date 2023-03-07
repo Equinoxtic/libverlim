@@ -14,7 +14,7 @@ void create_options_menu(OptionMenu *menu, std::string basename, std::string men
 				f_option_str.append(" / " + menu->menu_name + " >");
 	std::string log_msg = "Created Option Menu";
 				log_msg.append(f_option_str);
-	log_message(log_msg);
+	logger::log_message(log_msg);
 
 	std::cout << f_option_str << "\n";
 }

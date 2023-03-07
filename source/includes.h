@@ -15,6 +15,7 @@
 #include "../addons/libshell/shell.h"
 #include "../addons/display/seperator.h"
 #include "../parser/parser.h"
+#include "../include/keyinput.hpp"
 #include<iostream>
 #include<string>
 #include<vector>

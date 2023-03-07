@@ -72,5 +72,5 @@ void put_optionbox(OptionBox *optionbox) {
 }
 
 void typer_optionbox(OptionBox *optionbox, unsigned int delay) {
-	typer(optionbox->data, optionbox->data.length(), delay);
+	lstd::typer(optionbox->data, optionbox->data.length(), delay);
 }

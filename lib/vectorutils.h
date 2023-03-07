@@ -5,13 +5,15 @@
 #include<vector>
 #include<iostream>
 
-static inline void put_vector_s(std::vector<std::string> vec_s, bool newline = false) {
+template<typename V>
+static inline void put_vector_s(std::vector<V> vec_s, bool newline = false) {
 	for (size_t i = 0; i < vec_s.size(); ++i) {
 		std::cout << vec_s[i] << ((newline) ? "\n" : "");
 	}
 }
 
-static inline std::string ret_vector_s(std::vector<std::string> vec_s) {
+template<typename V>
+static inline std::string ret_vector_s(std::vector<V> vec_s) {
 	std::string f;
 	for (size_t i = 0; i < vec_s.size(); ++i) {
 		f.append(vec_s[i]);
@@ -19,7 +21,8 @@ static inline std::string ret_vector_s(std::vector<std::string> vec_s) {
 	return f;
 }
 
-static inline void setstring_vector(std::vector<std::string> vec_s, std::string ts) {
+template<typename V>
+static inline void setstring_vector(std::vector<V> vec_s, std::string ts) {
 	// for (size_t i = 0; i < vec_s.size(); ++i) {
 	// 	ts.append(vec_s[i]);
 	// }

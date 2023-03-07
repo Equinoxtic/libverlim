@@ -5,11 +5,11 @@
 
 inline static void demo_loader()
 {
-	screenclear();
+	lsys::screenclear();
 	
-	log_message("Running LibVerlim Demo!");
+	logger::log_message("Running LibVerlim Demo!");
 
-	std::string current_os = get_platform();
+	std::string current_os = lsys::get_platform();
 
 	std::string demo_title = wrap_str("Running LibVerlim Demo", "-----< ", " >-----");
 	
@@ -24,13 +24,15 @@ inline static void demo_loader()
 	};
 
 	for (size_t i = 0; i < demo_vs.size(); ++i) {
-		typer(demo_vs[i], demo_vs[i].length(), 5);
+		lstd::typer(demo_vs[i], demo_vs[i].length(), 5);
 	}
 
 	int input = getch();
-	if (input == 113) {
-		screenclear(); sysexit();
-	} else { std::cout << "\0"; }
+	if (key_pressed_str(input, "q") || key_pressed_str(input, "Q")) {
+		lsys::screenclear(); lsys::sysexit();
+	} else { 
+		std::cout << "\0";
+	}
 }
 
 #endif // LOADER_H_
