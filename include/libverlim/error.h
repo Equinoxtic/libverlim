@@ -13,7 +13,7 @@ static inline std::string errcreate(std::string errmsg)
 	std::string f_err_msg;
 	if (!str_empty(errmsg)) {
 		std::vector<std::string> vec_s = { "[ERROR]: ", errmsg };
-		f_err_msg = ret_vector_s(vec_s)
+		f_err_msg = ret_vector_s(vec_s);
 	}
 	return f_err_msg;
 }
