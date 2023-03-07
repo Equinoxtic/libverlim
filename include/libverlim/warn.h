@@ -12,7 +12,7 @@ static inline std::string warncreate(std::string warnmsg)
 	std::string f_warn_msg;
 	if (!str_empty(warnmsg)) {
 		std::vector<std::string> vec_s = { "[WARNING]: ", warnmsg };
-		f_warn_msg = ret_vector_s(vec_s)
+		f_warn_msg = ret_vector_s(vec_s);
 	}
 	return f_warn_msg;
 }
