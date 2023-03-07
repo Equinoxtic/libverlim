@@ -4,10 +4,12 @@
 #include<stdlib.h>
 #include<string>
 
-void syspause();
-void syspauseexit();
-void screenclear();
-void sysshowinfo();
-void sysexit();
+namespace lsys {
+	void syspause();
+	void syspauseexit();
+	void screenclear();
+	void sysshowinfo();
+	void sysexit();
+}
 
 #endif // LIMBUILTIN_H_

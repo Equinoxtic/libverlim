@@ -4,7 +4,8 @@
 #include<string>
 #include<stdlib.h>
 
-std::string get_platform();
-void sysexec(std::string c);
-
+namespace lsys {
+	std::string get_platform();
+	void sysexec(std::string c);
+}
 #endif // LIMSYS_H_
