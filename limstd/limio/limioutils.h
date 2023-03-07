@@ -6,28 +6,33 @@
 #include<iostream>
 #include<string>
 
-inline static std::string newln() { return "\n"; }
-inline static std::string tab() { return "\t"; }
-inline static std::string vtab() { return "\v"; }
-inline static std::string bkspc() { return "\b"; }
-
-inline static void o_newln() { std::cout << "\n"; }
-inline static void o_tab() { std::cout << "\t"; }
-inline static void o_vtab() { std::cout << "\v"; }
-inline static void o_bkspc() { std::cout << "\b"; }
-
-inline static void f_printstr(std::string s, int times = 1, std::string end = "\n")
+namespace lstd
 {
-	for (int i = 0; i < times; ++i)
-		std::cout << s;
-	std::cout << (compare_str(end, "\n") ? "\n" : end);
-}
+	inline static std::string newln() { return "\n"; }
+	inline static std::string tab() { return "\t"; }
+	inline static std::string vtab() { return "\v"; }
+	inline static std::string bkspc() { return "\b"; }
 
-inline static void typer(std::string &s, int len, unsigned del = 25)
-{
-	if (!str_empty(s) && s.length() >= 1) {
-		for (int i = 0; i < len; ++i) {
-			std::cout << s[i]; ms_sleep(del);
+	inline static void o_newln() { std::cout << "\n"; }
+	inline static void o_tab() { std::cout << "\t"; }
+	inline static void o_vtab() { std::cout << "\v"; }
+	inline static void o_bkspc() { std::cout << "\b"; }
+
+	template<typename T>
+	inline static void f_print(T s, int times = 1, std::string end = "\n")
+	{
+		for (int i = 0; i < times; ++i)
+			std::cout << s;
+		std::cout << (compare_str(end, "\n") ? "\n" : end);
+	}
+
+	template<typename T>
+	inline static void typer(T &s, int len, unsigned del = 25)
+	{
+		if (!str_empty(s) && s.length() >= 1) {
+			for (int i = 0; i < len; ++i) {
+				std::cout << s[i]; ms_sleep(del);
+			}
 		}
 	}
 }

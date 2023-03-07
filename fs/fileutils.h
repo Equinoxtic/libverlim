@@ -5,8 +5,10 @@
 #include<iostream>
 #include<fstream>
 
-void create_file(std::string f);
-void clear_file(std::string _path);
-bool file_exists(const std::string &_path);
+namespace lvfs {
+	void create_file(std::string f);
+	void clear_file(std::string _path);
+	bool file_exists(const std::string &_path);
+}
 
 #endif // FILEUTILS_H_

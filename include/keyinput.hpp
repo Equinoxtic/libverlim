@@ -152,7 +152,7 @@ template<typename K>
 static inline std::string key_to_strkey(K k)
 {
 	std::string key;
-	for (int i = 0; i < KEYMAP.size(); ++i) {
+	for (size_t i = 0; i < KEYMAP.size(); ++i) {
 		if (k == KEYMAP[i].second) {
 			key = KEYMAP[i].first;
 			break;
@@ -165,7 +165,7 @@ template<typename K>
 static inline int strkey_to_key(K k)
 {
 	int key = 0;
-	for (int i = 0; i < KEYMAP.size(); ++i) {
+	for (size_t i = 0; i < KEYMAP.size(); ++i) {
 		if (k == KEYMAP[i].first) {
 			key = KEYMAP[i].second;
 			break;
@@ -174,9 +174,14 @@ static inline int strkey_to_key(K k)
 	return key;
 }
 
-template<typename K>
+template<typename K>		
 static inline bool key_pressed(K k, K t_k) {
 	return (k == t_k);
+}
+
+template<typename K>
+static inline bool key_pressed_str(K k, std::string t_key_s) {
+	return (key_to_strkey(k) == t_key_s);
 }
 
 #endif // KEYINPUT_HPP

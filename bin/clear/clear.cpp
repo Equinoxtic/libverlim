@@ -1,4 +1,4 @@
 #include<iostream>
 #include "../../lib/sys/limbuiltin.h"
 
-int main() { screenclear(); return 0; }
+int main() { lsys::screenclear(); return 0; }

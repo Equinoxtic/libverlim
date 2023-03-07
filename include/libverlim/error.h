@@ -62,13 +62,13 @@ static inline std::string errcreate_advanced(std::string errmsg, std::string rea
 static inline void errput(std::string errmsg, std::string errtype = "default", bool force_exit = false)
 {
 	std::cout << errtyped(errmsg, errtype);
-	if (force_exit) sysexit();
+	if (force_exit) lsys::sysexit();
 }
 
 static inline void errput_advanced(std::string errmsg, std::string reason, bool is_quoted = false, bool force_exit = false)
 {
 	std::cout << errcreate_advanced(errmsg, reason, is_quoted);
-	if (force_exit) sysexit();
+	if (force_exit) lsys::sysexit();
 }
 
 #endif // ERROR_H_

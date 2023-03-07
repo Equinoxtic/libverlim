@@ -23,14 +23,14 @@ void parse_command(std::string cinput)
 			#endif
 		};
 		r = ret_vector_s(vs);
-		if (file_exists(r + ".exe")) {
+		if (lvfs::file_exists(r + ".exe")) {
 			#ifdef _WIN32
-			sysexec("pwsh -Command ./" + r);
+			lsys::sysexec("pwsh -Command ./" + r);
 			#else
-			sysexec("./" + r);
+			lsys::sysexec("./" + r);
 			#endif
 		} else {
-			sysexec(cinput);
+			lsys::sysexec(cinput);
 		}
 	}
 }

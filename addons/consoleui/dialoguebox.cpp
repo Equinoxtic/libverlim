@@ -30,7 +30,7 @@ void put_dialoguebox(DialogueBox *dialoguebox) {
 }
 
 void typer_dialoguebox(DialogueBox *dialoguebox, unsigned int delay) {
-	typer(dialoguebox->data,
+	lstd::typer(dialoguebox->data,
 		  dialoguebox->data.length(), 
 		  delay
 	);

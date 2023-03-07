@@ -46,16 +46,16 @@ void put_shell(std::string usr, std::string env, bool formatted, std::string env
 void f_shell(std::string type)
 {
 	std::string s;
-	std::string defusrf = read_file("res/shell/user.txt");
-	std::string defenvf = read_file("res/shell/env.txt");
+	std::string defusrf = lvfs::read_file("res/shell/user.txt");
+	std::string defenvf = lvfs::read_file("res/shell/env.txt");
 	if (!str_empty(type)) {
 		if (compare_str(type, "default")) {
-			s = create_shell(defusrf, ((!str_empty(defenvf) && file_exists(defenvf)) ? defenvf : auto_env()));
+			s = create_shell(defusrf, ((!str_empty(defenvf) && lvfs::file_exists(defenvf)) ? defenvf : auto_env()));
 		} else if (compare_str(type, "custom")) {
-			s = read_file("res/shell/customshell.txt");
+			s = lvfs::read_file("res/shell/customshell.txt");
 		}
 	} else {
-		s = create_shell(defusrf, ((!str_empty(defenvf) && file_exists(defenvf)) ? defenvf : auto_env()));
+		s = create_shell(defusrf, ((!str_empty(defenvf) &&lvfs:: file_exists(defenvf)) ? defenvf : auto_env()));
 	}
 	std::cout << s;
 }
