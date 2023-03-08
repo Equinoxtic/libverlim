@@ -7,11 +7,19 @@
 inline static void setuplib()
 {
 	std::vector<std::string> compile_bin = {
-		"help", "exit", "clear", "gitcpp"
+		"help", 
+		"gitcpp"
+		// "exit", 
+		// "clear", 
 	};
+
 	for (size_t i = 0; i < compile_bin.size(); ++i) {
 		std::string path = "bin/" + compile_bin[i] + "/";
-		lsys::sysexec("make -C " + path);
+		if (lvfs::file_exists(path + "Makefile")) {
+			lsys::sysexec("make -s -C " + path);
+		} else {
+			std::cout << compile_bin[i] << ": cannot be compiled. Does not exist.\n";
+		}
 	}
 }
 
@@ -30,7 +38,7 @@ inline static void initialize(bool load)
 	f_shell("custom");
 	lstd::reads(in);
 	if (!str_empty(in)) parse_input(in);
-	
+
 	if (!compare_str(in, "exit")) {
 		initialize(false);
 	} else {
