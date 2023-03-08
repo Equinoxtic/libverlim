@@ -7,7 +7,7 @@ namespace lvfs {
 		if (f.is_open()) {
 			f << c << ((newline) ? "\n" : ""); f.close();
 		} else {
-			std::cout << "Unable to write to file: " << _path;
+			std::cout << "Unable to write to file: " << _path << "\n";
 		}
 	}
 
@@ -17,7 +17,7 @@ namespace lvfs {
 		if (f.is_open()) {
 			f << c; f.close();
 		} else {
-			std::cout << "Unable to write to file: " << _path;
+			std::cout << "Unable to write to file: " << _path << "\n";
 		}
 	}
 
@@ -30,7 +30,7 @@ namespace lvfs {
 			ss << f.rdbuf();
 			ret_f = ss.str();
 		} else {
-			std::cout << "Unable to read file: " << _path;
+			std::cout << "Unable to read file: " << _path << "\n";
 		}
 		f.close();
 		return ret_f;

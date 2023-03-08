@@ -34,14 +34,23 @@ namespace lshell {
 	{
 		std::string s;
 
-		std::string defusrf = lvfs::read_file("res/shell/user.txt");
-		std::string defenvf = lvfs::read_file("res/shell/env.txt");
+		std::string defusrf;
+		std::string defenvf;
+
+		if (lvfs::file_exists("res/shell/user.txt") && lvfs::file_exists("res/shell/env.txt")) {
+			defusrf = lvfs::read_file("res/shell/user.txt");
+			defenvf = lvfs::read_file("res/shell/env.txt");
+		}
 
 		if (!str_empty(type)) {
 			if (compare_str(type, "default")) {
 				s = create_shell(defusrf, defenvf);
 			} else if (compare_str(type, "custom")) {
-				s = lvfs::read_file("res/shell/customshell.txt");
+				if (lvfs::file_exists("res/shell/customshell.txt")) {
+					s = lvfs::read_file("res/shell/customshell.txt");
+				} else {
+					s = ">";
+				}
 			}
 		} else {
 			s = create_shell(defusrf, defenvf);
