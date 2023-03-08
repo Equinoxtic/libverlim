@@ -163,5 +163,22 @@ include_directories(
 )
 
 add_library(verlimsrc STATIC ${VERLIM_SRC})
+
+if (EXISTS res)
+	file(COPY res DESTINATION Release/)
+endif()
+
+if (EXISTS logs)
+	file(COPY logs DESTINATION Release/)
+endif()
+
+if (EXISTS bin)
+	file(COPY bin DESTINATION Release/)
+endif()
+
+if (EXISTS libversion.txt)
+	file(COPY libversion.txt DESTINATION Release/)
+endif()
+
 add_executable(verlimdemo verlim.cpp)
 target_link_libraries(verlimdemo verlimsrc)
