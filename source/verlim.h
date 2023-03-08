@@ -35,7 +35,7 @@ inline static void initialize(bool load)
 		lsys::screenclear();
 	}
 
-	f_shell("custom");
+	lshell::f_shell("custom");
 	lstd::reads(in);
 	if (!str_empty(in)) parse_input(in);
 

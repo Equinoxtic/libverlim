@@ -5,7 +5,17 @@
 	+ GCC/G++ installed
 	+ CMake installed
 	+ Make installed
-* You will also need [PowershellCore](https://github.com/PowerShell/PowerShell) for `WIN32` directives.
+* You will also need [Powershell Core](https://github.com/PowerShell/PowerShell) for `WIN32` directives.
+
+First, git clone the resources for LibVerlim.
+
+```sh
+git clone https://github.com/Equinoxtic/res
+```
+
+To start building, type ``./build.sh`` or ``.\build.ps1`` for Windows users.
+
+To run, type ``./run.sh`` or ``.\run.ps1`` for Windows users.
 
 ## Download Links
 
