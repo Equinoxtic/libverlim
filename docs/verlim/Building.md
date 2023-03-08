@@ -10,7 +10,13 @@
 First, git clone the resources for LibVerlim.
 
 ```sh
-git clone https://github.com/Equinoxtic/res
+$ git clone https://github.com/Equinoxtic/res
+```
+
+If you have the console already running, you can run:
+
+```
+> res-install
 ```
 
 To start building, type ``./build.sh`` or ``.\build.ps1`` for Windows users.
