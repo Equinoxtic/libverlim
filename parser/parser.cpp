@@ -36,6 +36,8 @@ void parse_command(std::string cinput)
 				lsys::screenclear();
 			} else if (compare_str(cinput, "exit")) {
 				std::cout << "\0";
+			} else if (compare_str(cinput, "res-install")) {
+				lsys::sysexec("git clone https://github.com/Equinoxtic/res.git");
 			} else {
 				lsys::sysexec(cinput);
 			}
