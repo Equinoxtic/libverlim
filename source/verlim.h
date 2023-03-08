@@ -6,6 +6,8 @@
 
 inline static void setuplib()
 {
+	lsys::screenclear();
+
 	std::vector<std::string> compile_bin = {
 		"help", 
 		"gitcpp"
@@ -28,7 +30,6 @@ inline static void initialize(bool load)
 	std::string in;
 
 	if (load) {
-		setuplib();
 		logger::clear_logfile();
 		demo_loader();
 		logger::log_message("LibVerlim console launched!");
