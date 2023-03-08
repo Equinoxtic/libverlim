@@ -2,6 +2,7 @@
 #include "../lib/stringutils.h"
 #include "../lib/vectorutils.h"
 #include "../lib/sys/limsys.h"
+#include "../lib/sys/limbuiltin.h"
 #include "../fs/fileutils.h"
 #include<iostream>
 #include<vector>
@@ -30,7 +31,14 @@ void parse_command(std::string cinput)
 			lsys::sysexec("./" + r);
 			#endif
 		} else {
-			lsys::sysexec(cinput);
+			// BUILT-IN
+			if (compare_str(cinput, "clear")) {
+				lsys::screenclear();
+			} else if (compare_str(cinput, "exit")) {
+				lsys::screenclear(); lsys::sysexit();
+			} else {
+				lsys::sysexec(cinput);
+			}
 		}
 	}
 }
