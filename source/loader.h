@@ -24,7 +24,7 @@ inline static void demo_loader()
 	};
 
 	for (size_t i = 0; i < demo_vs.size(); ++i) {
-		lstd::typer(demo_vs[i], demo_vs[i].length(), 5);
+		lstd::typer(demo_vs[i], demo_vs[i].length(), 2);
 	}
 
 	int input = getch();
