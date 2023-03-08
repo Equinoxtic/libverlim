@@ -120,9 +120,10 @@ source_group("http" FILES ${VERLIM_HTTP})
 set(VERLIM_MATH
 	math/libyield/percentage.h
 	math/libyield/yield.h
+	math/basicarithmetic.h
 )
 
-source_group("math\\libyield" FILES ${VERLIM_MATH})
+source_group("math" FILES ${VERLIM_MATH})
 
 set(VERLIM_MAIN_SOURCE
 	source/includes.h
