@@ -8,12 +8,14 @@ void list_commands()
 	std::vector<std::string> list = {
 		"help",
 		"clear",
-		"exit"
+		"exit",
+		"gitcpp"
 	};
 	std::vector<std::string> descriptions = {
 		"Display information and help for the LibVerlim console.",
 		"Clear the screen.",
-		"Exits out of the console."
+		"Exits out of the console.",
+		"Git Checkout, Pull, and Push."
 	};
 	std::cout << "\n";
 	c_command_s(list, descriptions);
