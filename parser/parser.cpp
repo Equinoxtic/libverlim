@@ -35,7 +35,7 @@ void parse_command(std::string cinput)
 			if (compare_str(cinput, "clear")) {
 				lsys::screenclear();
 			} else if (compare_str(cinput, "exit")) {
-				lsys::screenclear(); lsys::sysexit();
+				std::cout << "\0";
 			} else {
 				lsys::sysexec(cinput);
 			}
