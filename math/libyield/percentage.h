@@ -3,12 +3,16 @@
 
 #include<string>
 
-static inline float to_percentage(float x) {
-	return (x * 100);
-}
+namespace lvmath {
+	template<typename N>
+	static inline N to_percentage(N x) {
+		return (x * 100);
+	}
 
-static inline float find_percentage(float x) {
-	return (x / 100);
+	template<typename N>
+	static inline N find_percentage(N x) {
+		return (x / 100);
+	}
 }
 
 #endif // PERCENTAGE_H_

@@ -4,12 +4,16 @@
 #include "./percentage.h"
 #include<iostream>
 
-static inline float yield_r(float o, float i) {
-	return (to_percentage(o/i));
-}
+namespace lvmath {
+	template<typename N>
+	static inline N yield_r(N o, N i) {
+		return (to_percentage(o/i));
+	}
 
-static inline void yield_o(float o, float i) {
-	std::cout << to_percentage(o/i) << "%";
+	template<typename N>
+	static inline void yield_o(N o, N i) {
+		std::cout << to_percentage(o/i) << "%";
+	}
 }
 
 #endif // YIELD_H_
