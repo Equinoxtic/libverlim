@@ -8,8 +8,8 @@
 inline static std::string get_lib_version()
 {
 	std::string ret_s;
-	if (lvfs::file_exists("res/libversion.txt"))
-		ret_s = lvfs::read_file("res/libversion.txt");
+	if (lvfs::file_exists("libversion.txt"))
+		ret_s = lvfs::read_file("libversion.txt");
 	else
 		ret_s = "NO FILE.";
 	return ret_s;
