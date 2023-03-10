@@ -4,3 +4,4 @@
 .vscode/
 [Rr]es/
 *.exe
+*.o
