@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 
 project("verlimlib" VERSION 0.4 DESCRIPTION "LibVerlim Project by Lunaxtic")
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 set(VERLIM_ADDONS
 	addons/liboptions/option.cpp
@@ -37,6 +37,7 @@ source_group("addons" FILES ${VERLIM_ADDONS})
 set(VERLIM_PARSER
 	parser/parser.cpp
 	parser/parser.h
+	parser/bincmds.h
 )
 
 source_group("parser" FILES ${VERLIM_PARSER})

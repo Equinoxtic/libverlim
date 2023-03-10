@@ -3,24 +3,18 @@
 
 #include "includes.h"
 #include "loader.h"
+#include "../parser/bincmds.h"
 
 inline static void setuplib()
 {
 	lsys::screenclear();
 
-	std::vector<std::string> compile_bin = {
-		"help", 
-		"gitcpp"
-		// "exit", 
-		// "clear", 
-	};
-
-	for (size_t i = 0; i < compile_bin.size(); ++i) {
-		std::string path = "bin/" + compile_bin[i] + "/";
+	for (size_t i = 0; i < LIST_CMDS.size(); ++i) {
+		std::string path = "bin/" + LIST_CMDS[i] + "/";
 		if (lvfs::file_exists(path + "Makefile")) {
 			lsys::sysexec("make -s -C " + path);
 		} else {
-			std::cout << compile_bin[i] << ": cannot be compiled. Does not exist.\n";
+			std::cout << LIST_CMDS[i] << ": cannot be compiled. Does not exist.\n";
 		}
 	}
 }
@@ -40,10 +34,10 @@ inline static void initialize(bool load)
 	lstd::reads(in);
 	if (!str_empty(in)) parse_input(in);
 
-	if (!compare_str(in, "exit")) {
-		initialize(false);
-	} else {
+	if (compare_str(in, "exit")) {
 		logger::clear_logfile(); lsys::screenclear();
+	} else {
+		initialize(false);
 	}
 }
 
