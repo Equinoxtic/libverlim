@@ -4,8 +4,7 @@
 #define WINMEM_H_
 
 #include <Windows.h>
-#include <processthreadsapi.h>
-#include <sysinfoapi.h>
+#include <sysinfoapi.h>	
 #include <Psapi.h>
 
 static inline DWORDLONG get_total_virtmem() {

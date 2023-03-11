@@ -6,6 +6,12 @@
 	+ CMake installed
 	+ Make installed
 * You will also need [Powershell Core](https://github.com/PowerShell/PowerShell) for `WIN32` directives.
+* You will also need to install [Visual Studio 2022](https://visualstudio.microsoft.com/) and some components.
+	* Individual components to install:
+	```
+	Windows 11 SDK (10.22000.0)
+	MSVC v143 - VS 2022 C++ x64/x86
+	```
 
 First, git clone the resources for LibVerlim.
 
