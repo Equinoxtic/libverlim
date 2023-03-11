@@ -4,5 +4,5 @@
 - [ ] Linux Support
 - [x] Windows Support
 - [ ] Project manager
-- [ ] Extensive console (Conosole modding support)
+- [ ] Extensive console (Console modding support)
 - [ ] C API
