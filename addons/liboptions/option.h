@@ -5,17 +5,11 @@
 #include<iostream>
 
 typedef struct {
-	std::string _name = "Option";
-	std::string _desc = "Description";
-	std::string _surround_type = "sqrbr";
-	std::string _pointch = " : ";
-	bool _quoted = true;
+	std::string data;
 } Option;
 
-void set_option(Option *option, std::string name,
-					   std::string desc, std::string surround_type,
-					   std::string pointch, bool quoted);
-void c_numoption(Option *option, int num);
-void add_option(Option *option);
+std::string create_option(int opt_n, std::string opt_s);
+void set_option(Option *option, int opt_n, std::string opt_s);
+void put_option(Option *option);
 
 #endif // OPTION_H_
