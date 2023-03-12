@@ -6,7 +6,8 @@
 
 inline static std::vector<std::string> LIST_CMDS = {
 	"help",
-	"gitcpp"
+	"gitcpp",
+	"resconfig"
 };
 
 #endif // __BINCMDS_H_
