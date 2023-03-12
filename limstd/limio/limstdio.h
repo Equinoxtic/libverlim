@@ -17,11 +17,6 @@ namespace lstd
 	inline static void reads(T &s) {
 		std::getline(std::cin, s);
 	}
-
-	template<typename T>
-	inline static void readch(T &ch, int size) {
-		ch = getch(); 
-	}
 }
 
 #endif // LIMSTDIO_H_
