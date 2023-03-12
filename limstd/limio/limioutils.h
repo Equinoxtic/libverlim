@@ -18,6 +18,26 @@ namespace lstd
 	inline static void o_vtab() { std::cout << "\v"; }
 	inline static void o_bkspc() { std::cout << "\b"; }
 
+	inline static void f_seq(std::string _type, int times = 1) {
+		std::string s;
+
+		if (compare_str(_type, "newln") || compare_str(_type, "newline")) {
+			s = "\n";
+		} else if (compare_str(_type, "tab"))  {
+			s = "\t";
+		} else if (compare_str(_type, "vtab") || compare_str(_type, "vertical-tab")) {
+			s = "\v";
+		} else if (compare_str(_type, "bkspc") || compare_str(_type, "backspace")) {
+			s = "\b";
+		} else {
+			s = "\n";
+		}
+
+		for (int i = 0; i < times; ++i) {
+			std::cout << s;
+		}
+	}
+
 	template<typename T>
 	inline static void f_print(T s, int times = 1, std::string end = "\n")
 	{
