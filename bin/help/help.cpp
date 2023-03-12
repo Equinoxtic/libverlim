@@ -12,6 +12,7 @@ void list_commands(bool verbose = true)
 		"clear",
 		"exit",
 		"gitcpp",
+		"resconfig",
 		"res-install"
 	};
 	std::vector<std::string> descriptions = {
@@ -19,6 +20,7 @@ void list_commands(bool verbose = true)
 		"Clear the screen.",
 		"Exits out of the console.",
 		"Git Checkout, Pull, and Push.",
+		"\"Resource Configuration\", used for configuring the verlim console resources.",
 		"Install LibVerlim resource files. (For customization and etc.)"
 	};
 	std::cout << "\n";
