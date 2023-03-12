@@ -56,8 +56,6 @@ set(VERLIM_MAINLIB
 	lib/convert.h
 	lib/stringutils.h
 	lib/stringutils.cpp
-	lib/chtools.h
-	lib/chtools.cpp
 	lib/thread.h
 	lib/thread.cpp
 	lib/timelib.h
@@ -134,13 +132,6 @@ set(VERLIM_MAIN_SOURCE
 
 source_group("source" FILES ${VERLIM_MAIN_SOURCE})
 
-set(LVLIBC
-	lvlibc/strtools.cpp
-	lvlibc/strtools.h
-)
-
-source_group("lvlibc" FILES ${LVLIBC})
-
 set(VERLIM_SRC
 	${VERLIM_ADDONS}
 	${VERLIM_PARSER}
@@ -154,7 +145,6 @@ set(VERLIM_SRC
 	${VERLIM_HTTP}
 	${VERLIM_MATH}
 	${VERLIM_MAIN_SOURCE}
-	${LVLIBC}
 )
 
 include_directories(
