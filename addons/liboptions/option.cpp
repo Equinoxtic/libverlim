@@ -1,49 +1,28 @@
 #include "option.h"
 #include "../../lib/stringutils.h"
+#include "../../lib/vectorutils.h"
+#include<iostream>
+#include<vector>
+#include<sstream>
 
-void set_option(Option *option, std::string name,
-				std::string desc, std::string surround_type,
-				std::string pointch, bool quoted)
+std::string create_option(int opt_n, std::string opt_s)
 {
-	option->_name = name; option->_desc = desc;
-	option->_surround_type = surround_type;
-	option->_pointch = pointch; option->_quoted = quoted;
+	std::string s;
+	if (!str_empty(opt_s) && opt_n >= 0) {
+		std::stringstream new_n;
+		new_n << opt_n;
+		std::vector<std::string> vec_s = {
+			wrap_str(new_n.str(), "[", "]"), ": ", opt_s
+		};
+		s = ret_vector_s(vec_s);
+	}
+	return s;
 }
 
-void c_numoption(Option *option, int num)
-{
-	std::string new_name = std::to_string(num);
-	set_option(option, new_name,
-	option->_desc, option->_surround_type,
-	option->_pointch, option->_quoted);
+void set_option(Option *option, int opt_n, std::string opt_s) {
+	option->data = create_option(opt_n, opt_s);
 }
 
-void add_option(Option *option)
-{
-	std::string f_option_str;
-	std::string ret_name;
-	std::string ret_desc;
-	std::string ret_sura;
-	std::string ret_surb;
-
-	if (str_empty(option->_name) && str_empty(option->_desc)) {
-		ret_name = "Option"; ret_desc = "Description";
-	} else {
-		ret_name = option->_name; ret_desc = option->_desc;
-	}
-
-	if (!str_empty(option->_surround_type)) {
-		if (compare_str(option->_surround_type, "sqrbr") || compare_str(option->_surround_type, "square_brackets")) {
-			ret_sura = "["; ret_surb = "]";
-		} else if (compare_str(option->_surround_type, "br") || compare_str(option->_surround_type, "brackets")) {
-			ret_sura = "{"; ret_surb = "}";
-		} else if (compare_str(option->_surround_type, "paren") || compare_str(option->_surround_type, "parenthesis")) {
-			ret_sura = "("; ret_surb = ")";
-		}
-	}
-
-	f_option_str = wrap_str(ret_name, ret_sura, ret_surb);
-	if (option->_quoted)
-		f_option_str.append(option->_pointch + quote_str(ret_desc));
-	std::cout << f_option_str;
+void put_option(Option *option) {
+	std::cout << option->data;
 }

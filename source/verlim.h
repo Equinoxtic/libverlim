@@ -11,10 +11,14 @@ inline static void setuplib()
 
 	for (size_t i = 0; i < LIST_CMDS.size(); ++i) {
 		std::string path = "bin/" + LIST_CMDS[i] + "/";
-		if (lvfs::file_exists(path + "Makefile")) {
-			lsys::sysexec("make -s -C " + path);
+		if (lvfs::file_exists(path + "/Makefile")) {
+			if (lvfs::file_exists("bin/" + LIST_CMDS[i] + ".exe")) {
+				continue;
+			} else {
+				lsys::sysexec("make -s -C " + path);
+			}
 		} else {
-			std::cout << LIST_CMDS[i] << ": cannot be compiled. Does not exist.\n";
+			std::cout << wrap_str(LIST_CMDS[i], "[", "]") << ": cannot be compiled.\nMakefile or FILE Does not exist.\n";
 		}
 	}
 }
