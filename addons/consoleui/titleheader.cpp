@@ -12,17 +12,13 @@ std::string create_header(
 	std::string f;
 	if (!str_empty(main_header_string)) {
 		std::string subheader = (
-			(!compare_str(sub_header_string, "none") || !str_empty(sub_header_string)) ? " / " + sub_header_string : ""
+			(!compare_str(sub_header_string, "none") ? " / " + sub_header_string : "")
 		);
 		std::string subsubheader = (
-			(!compare_str(subsub_header_string, "none") || !str_empty(subsub_header_string)) ? " / " + subsub_header_string : ""
+			(!compare_str(subsub_header_string, "none") ? " / " + subsub_header_string : "")
 		);
 		std::vector<std::string> vec_s = {
-			"[",
-				main_header_string,
-				subheader, 
-				subsubheader, 
-			"]"
+			"[ ", main_header_string, subheader, subsubheader, " ]"
 		};
 		f = ret_vector_s(vec_s);
 	}

@@ -7,8 +7,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(VERLIM_ADDONS
 	addons/liboptions/option.cpp
 	addons/liboptions/option.h
-	addons/liboptions/optionmenu.cpp
-	addons/liboptions/optionmenu.h
+	addons/liboptions/optionutils.cpp
+	addons/liboptions/optionutils.h
 	addons/libshell/shell.cpp
 	addons/libshell/shell.h
 	addons/libshell/shellenv.h
