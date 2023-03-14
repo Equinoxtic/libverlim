@@ -1,9 +1,11 @@
 #include "parser.h"
 #include "../lib/stringutils.h"
+#include "../lib/cstrutils.h"
 #include "../lib/vectorutils.h"
 #include "../lib/sys/limsys.h"
 #include "../lib/sys/limbuiltin.h"
 #include "../fs/fileutils.h"
+#include "../common/version.h"
 #include<iostream>
 #include<vector>
 #include "bincmds.h"
@@ -28,6 +30,8 @@ void _cmp_input(std::string in) {
 		std::cout << "\0";
 	} else if (compare_str(in, "res-install")) {
 		lsys::sysexec("git clone https://github.com/Equinoxtic/res.git");
+	} else if (compare_str(in, "version")) {
+		std::cout << "VERSION: " << get_lib_version();
 	} else { lsys::sysexec(in); }
 }
 

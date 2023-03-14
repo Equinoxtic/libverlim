@@ -2,6 +2,8 @@
 #define INCLUDES_H_
 
 #include "../lib/stringutils.h"
+#include "../lib/vectorutils.h"
+#include "../lib/timelib.h"
 #include "../lib/thread.h"
 #include "../fs/fileutils.h"
 #include "../fs/file.h"

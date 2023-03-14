@@ -5,103 +5,119 @@
 #include<vector>
 #include<conio.h>
 
-// MISC KEYS
-#define 	KEY_BACKSPACE				8
-#define 	KEY_ENTER 					13
-#define 	KEY_ESCAPE 					27
-#define		KEY_SPACE					32
-#define		KEY_DELETE					127
-#define 	KEY_NBSP					255
+enum {
+	// MISC KEYS
+	KEY_BACKSPACE	= 8,
+	KEY_ENTER 		= 13,
+	KEY_ESCAPE 		= 27,
+	KEY_SPACE		= 32,
+	KEY_DELETE		= 127,
+	KEY_NBSP		= 255,
 
-// NUMBER KEYS
-#define 	KEY_ZERO 					48
-#define		KEY_ONE 					49
-#define		KEY_TWO						50
-#define 	KEY_THREE					51
-#define 	KEY_FOUR					52
-#define 	KEY_FIVE					53
-#define 	KEY_SIX						54
-#define 	KEY_SEVEN					55
-#define		KEY_EIGHT 					56
-#define		KEY_NINE					57
+	// NUMBER KEYS
+	KEY_ZERO 	= 48,
+	KEY_ONE 	= 49,
+	KEY_TWO		= 50,
+	KEY_THREE	= 51,
+	KEY_FOUR	= 52,
+	KEY_FIVE	= 53,
+	KEY_SIX		= 54,
+	KEY_SEVEN	= 55,
+	KEY_EIGHT 	= 56,
+	KEY_NINE	= 57,
 
-// UPPERCASE LETTER KEYS
-#define 	KEY_BIG_A					65
-#define		KEY_BIG_B					66
-#define		KEY_BIG_C					67
-#define		KEY_BIG_D					68
-#define		KEY_BIG_E					69
-#define		KEY_BIG_F					70
-#define		KEY_BIG_G					71
-#define		KEY_BIG_H					72
-#define		KEY_BIG_I					73
-#define		KEY_BIG_J					74
-#define		KEY_BIG_K					75
-#define		KEY_BIG_L					76
-#define		KEY_BIG_M					77
-#define		KEY_BIG_N					78
-#define		KEY_BIG_O					79
-#define		KEY_BIG_P					80
-#define		KEY_BIG_Q					81
-#define		KEY_BIG_R					82
-#define		KEY_BIG_S					83
-#define		KEY_BIG_T					84
-#define		KEY_BIG_U					85
-#define		KEY_BIG_V					86
-#define		KEY_BIG_W					87
-#define		KEY_BIG_X					88
-#define		KEY_BIG_Y					89
-#define		KEY_BIG_Z					90
+	// UPPERCASE LETTER KEYS
+	KEY_BIG_A = 65,
+	KEY_BIG_B = 66,
+	KEY_BIG_C = 67,
+	KEY_BIG_D = 68,
+	KEY_BIG_E = 69,
+	KEY_BIG_F = 70,
+	KEY_BIG_G = 71,
+	KEY_BIG_H = 72,
+	KEY_BIG_I = 73,
+	KEY_BIG_J = 74,
+	KEY_BIG_K = 75,
+	KEY_BIG_L = 76,
+	KEY_BIG_M = 77,
+	KEY_BIG_N = 78,
+	KEY_BIG_O = 79,
+	KEY_BIG_P = 80,
+	KEY_BIG_Q = 81,
+	KEY_BIG_R = 82,
+	KEY_BIG_S = 83,
+	KEY_BIG_T = 84,
+	KEY_BIG_U = 85,
+	KEY_BIG_V = 86,
+	KEY_BIG_W = 87,
+	KEY_BIG_X = 88,
+	KEY_BIG_Y = 89,
+	KEY_BIG_Z = 90,
 
-// DEFAULT LETTER KEYS
-#define 	KEY_A						97
-#define		KEY_B						98
-#define		KEY_C						99
-#define		KEY_D						100
-#define		KEY_E						101
-#define		KEY_F						102
-#define		KEY_G						103
-#define		KEY_H						104
-#define		KEY_I						105
-#define		KEY_J						106
-#define		KEY_K						107
-#define		KEY_L						108
-#define		KEY_M						109
-#define		KEY_N						110
-#define		KEY_O						111
-#define		KEY_P						112
-#define		KEY_Q						113
-#define		KEY_R						114
-#define		KEY_S						115
-#define		KEY_T						116
-#define		KEY_U						117
-#define		KEY_V						118
-#define		KEY_W						119
-#define		KEY_X						120
-#define		KEY_Y						121
-#define		KEY_Z						122
+	// DEFAULT LETTER KEYS
+	KEY_A = 97,
+	KEY_B = 98,
+	KEY_C = 99,
+	KEY_D = 100,
+	KEY_E = 101,
+	KEY_F = 102,
+	KEY_G = 103,
+	KEY_H = 104,
+	KEY_I = 105,
+	KEY_J = 106,
+	KEY_K = 107,
+	KEY_L = 108,
+	KEY_M = 109,
+	KEY_N = 110,
+	KEY_O = 111,
+	KEY_P = 112,
+	KEY_Q = 113,
+	KEY_R = 114,
+	KEY_S = 115,
+	KEY_T = 116,
+	KEY_U = 117,
+	KEY_V = 118,
+	KEY_W = 119,
+	KEY_X = 120,
+	KEY_Y = 121,
+	KEY_Z = 122,
 
-// SYMBOL KEYS
-#define		KEY_EXCLAMATION_POINT		33
-#define		KEY_QUOTATION_MARK			34
-#define		KEY_POUND_SIGN				35
-#define		KEY_DOLLAR_SIGN				36
-#define		KEY_PERCENTAGE_SIGN			37
-#define		KEY_AMPERSAND_SIGN			38
-#define		KEY_APOSTROPHE				39
-#define		KEY_COMMA					44
-#define		KEY_PERIOD					46
+	// SYMBOL KEYS
+	KEY_EXCLAMATION_POINT	= 33,
+	KEY_QUOTATION_MARK		= 34,
+	KEY_POUND_SIGN			= 35,
+	KEY_DOLLAR_SIGN			= 36,
+	KEY_PERCENTAGE_SIGN		= 37,
+	KEY_AMPERSAND_SIGN		= 38,
+	KEY_APOSTROPHE			= 39,
+	KEY_COMMA				= 44,
+	KEY_HYPHEN				= 45,
+	KEY_PERIOD				= 46,
+	KEY_COLON				= 58,
+	KEY_SEMICOLON			= 59,
+	KEY_LESS_THAN			= 60,
+	KEY_EQUAL				= 61,
+	KEY_GREAT_THAN			= 62,
+	KEY_QUESTION_MARK		= 63,
+	KEY_AT					= 64,
+	KEY_CARET				= 94,
+	KEY_UNDERSCORE			= 95,
+	KEY_GRAVE				= 96,
+	KEY_TILDE				= 126,
 
-#define		KEY_OPEN_PARENTHESIS		40
-#define		KEY_CLOSE_PARENTHESIS		41
-#define		KEY_OPEN_SQUAREBRACKET		91
-#define 	KEY_CLOSE_SQUAREBRACKET		93
-#define		KEY_OPEN_CURLYBRACKET		123
-#define		KEY_CLOSE_CURLYBRACKET		125
+	// SYMBOLS (BRACKETS)
+	KEY_OPEN_PARENTHESIS	= 40,
+	KEY_CLOSE_PARENTHESIS	= 41,
+	KEY_OPEN_SQUAREBRACKET	= 91,
+	KEY_CLOSE_SQUAREBRACKET	= 93,
+	KEY_OPEN_CURLYBRACKET	= 123,
+	KEY_CLOSE_CURLYBRACKET	= 125,
 
-#define		KEY_FORWARD_SLASH			47
-#define 	KEY_BACKWARD_SLASH			92
-#define		KEY_VERTICAL_BAR			124
+	// SYMBOLS (MISC)
+	KEY_FORWARD_SLASH	= 47,
+	KEY_BACKWARD_SLASH	= 92,
+	KEY_VERTICAL_BAR	= 124
+};
 
 const std::vector<std::pair<std::string, int>> KEYMAP = {
 	{ 	"enter",		KEY_ENTER 		},	{ "a", KEY_A },	{ "m", KEY_M },	{ "y", KEY_Y },	{ "A", KEY_BIG_A },	{ "M", KEY_BIG_M },	{ "Y", KEY_BIG_Y },
@@ -118,29 +134,41 @@ const std::vector<std::pair<std::string, int>> KEYMAP = {
 	{ 	"num_nine", 	KEY_NINE		},	{ "l", KEY_L },	{ "x", KEY_X },					{ "L", KEY_BIG_L },	{ "X", KEY_BIG_X },
 	
 	{	"backspace",	KEY_BACKSPACE	},
-	{	"delete",		KEY_DELETE		},
+	{	"DEL",			KEY_DELETE		},
 	{	"space",		KEY_SPACE		},
 
-	{	"exclamation",		KEY_EXCLAMATION_POINT	},
-	{	"quote",			KEY_QUOTATION_MARK		},
-	{	"pound",			KEY_POUND_SIGN			},
-	{	"dollar",			KEY_DOLLAR_SIGN			},
-	{	"percent",			KEY_PERCENTAGE_SIGN		},
-	{	"ampersand",		KEY_AMPERSAND_SIGN		},
-	{	"apostrophe",		KEY_APOSTROPHE			},
-	{	"comma",			KEY_COMMA				},
-	{	"period",			KEY_PERIOD				},
+	{	"!",	KEY_EXCLAMATION_POINT	},
+	{	"\"",	KEY_QUOTATION_MARK		},
+	{	"#",	KEY_POUND_SIGN			},
+	{	"$",	KEY_DOLLAR_SIGN			},
+	{	"%",	KEY_PERCENTAGE_SIGN		},
+	{	"&",	KEY_AMPERSAND_SIGN		},
+	{	"\'",	KEY_APOSTROPHE			},
+	{	",",	KEY_COMMA				},
+	{	"-",	KEY_HYPHEN				},
+	{	".",	KEY_PERIOD				},
+	{	":",	KEY_COLON				},
+	{	";",	KEY_SEMICOLON			},
+	{	"<",	KEY_LESS_THAN			},
+	{	"=",	KEY_EQUAL				},
+	{	">",	KEY_GREAT_THAN			},
+	{	"?",	KEY_QUESTION_MARK		},
+	{	"@",	KEY_AT					},
+	{	"^",	KEY_CARET				},
+	{	"_",	KEY_UNDERSCORE			},
+	{	"`",	KEY_GRAVE				},
+	{	"~",	KEY_TILDE				},
 
-	{	"open_parenthesis",		KEY_OPEN_PARENTHESIS		},
-	{	"close_parenthesis",	KEY_CLOSE_PARENTHESIS		},
-	{	"open_squarebracket",	KEY_OPEN_SQUAREBRACKET		},
-	{	"close_squarebracket",	KEY_CLOSE_SQUAREBRACKET		},
-	{	"open_curlybracket",	KEY_OPEN_CURLYBRACKET		},
-	{	"close_curlybracket",	KEY_CLOSE_CURLYBRACKET		},
+	{	"(",	KEY_OPEN_PARENTHESIS		},
+	{	")",	KEY_CLOSE_PARENTHESIS		},
+	{	"[",	KEY_OPEN_SQUAREBRACKET		},
+	{	"]",	KEY_CLOSE_SQUAREBRACKET		},
+	{	"{",	KEY_OPEN_CURLYBRACKET		},
+	{	"}",	KEY_CLOSE_CURLYBRACKET		},
 
-	{	"forward_slash",		KEY_FORWARD_SLASH		},
-	{	"backward_slash",		KEY_BACKWARD_SLASH		},
-	{	"vertical_bar",			KEY_VERTICAL_BAR		}
+	{	"/",	KEY_FORWARD_SLASH		},
+	{	"\\",	KEY_BACKWARD_SLASH		},
+	{	"|",	KEY_VERTICAL_BAR		}
 };
 	
 template<typename K>
