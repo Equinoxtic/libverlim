@@ -5,6 +5,14 @@
 #include "loader.h"
 #include "../parser/bincmds.h"
 
+static void _cmpl_s(std::string s, bool compiled = false) {
+	if (!compiled) {
+		std::cout << "@make // [Compiling]: " << wrap_str("~/" + s + "...", "< ", " >") << "\n";
+	} else {
+		std::cout << "@make // [Compiled]: " << quote_str(s) << "\n";
+	}
+}
+
 inline static void setuplib()
 {
 	lsys::screenclear();
@@ -12,15 +20,16 @@ inline static void setuplib()
 	for (size_t i = 0; i < LIST_CMDS.size(); ++i) {
 		std::string path = "bin/" + LIST_CMDS[i] + "/";
 		if (lvfs::file_exists(path + "/Makefile")) {
-			if (lvfs::file_exists("bin/" + LIST_CMDS[i] + ".exe")) {
-				continue;
-			} else {
-				lsys::sysexec("make -s -C " + path);
-			}
+			_cmpl_s(path);
+			lsys::sysexec("make -s -C " + path);
+			_cmpl_s(LIST_CMDS[i], true);
+			ms_sleep(150);
 		} else {
 			std::cout << wrap_str(LIST_CMDS[i], "[", "]") << ": cannot be compiled.\nMakefile or FILE Does not exist.\n";
 		}
 	}
+
+	lsys::screenclear();
 }
 
 inline static void initialize(bool load)
