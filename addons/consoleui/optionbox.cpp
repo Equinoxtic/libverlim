@@ -62,7 +62,7 @@ namespace ui {
 
 		sf << set_pos(posx, posy) << f;
 
-		return f;
+		return sf.str();
 	}
 
 	void set_optionbox(OptionBox *optionbox, int posx, int posy, std::string s, std::string y, std::string x) {

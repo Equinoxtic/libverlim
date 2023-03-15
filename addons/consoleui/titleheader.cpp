@@ -1,8 +1,10 @@
 #include "titleheader.h"
+#include "uipos.h"
 #include "../../lib/stringutils.h"
 #include "../../lib/vectorutils.h"
 #include<vector>
 #include<iostream>
+#include<sstream>
 
 namespace ui {
 	std::string create_header(
@@ -11,6 +13,8 @@ namespace ui {
 		std::string sub_header_string,
 		std::string subsub_header_string
 	) {
+		std::stringstream sf;
+
 		std::string f;
 		if (!str_empty(main_header_string)) {
 			std::string subheader = (
@@ -24,7 +28,10 @@ namespace ui {
 			};
 			f = ret_vector_s(vec_s);
 		}
-		return f;
+
+		sf << ui::set_pos(x, y) << f;
+
+		return sf.str();
 	}
 
 	void set_header(

@@ -24,7 +24,7 @@ namespace ui {
 
 		sf << ui::set_pos(x, y) << f;
 
-		return f;
+		return sf.str();
 	}
 
 	void set_textbox(TextBox *textbox, std::string textbox_s, int x, int y) {
