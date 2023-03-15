@@ -3,7 +3,7 @@
 
 #include<string>
 
-typedef struct {
+typedef struct Command {
 	std::string data;
 } Command;
 
