@@ -3,7 +3,7 @@
 
 #include<string>
 
-typedef struct {
+typedef struct Seperator {
 	std::string data;
 } Seperator;
 
