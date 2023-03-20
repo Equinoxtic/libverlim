@@ -12,15 +12,31 @@ std::string create_option(int opt_n, std::string opt_s)
 		std::stringstream new_n;
 		new_n << opt_n;
 		std::vector<std::string> vec_s = {
-			wrap_str(new_n.str(), "[", "]"), ": ", opt_s
+			wrap_str(new_n.str(), "(", ")"), ": ", opt_s
 		};
 		s = ret_vector_s(vec_s);
 	}
 	return s;
 }
 
+std::string create_namedoption(std::string opt_n, std::string opt_s)
+{
+	std::string s;
+	if (!str_empty(opt_n) && !str_empty(opt_s)) {
+		std::vector<std::string> vs = {
+			wrap_str(opt_n, "[", "]"), ": ", opt_s
+		};
+		s = ret_vector_s(vs);
+	}
+	return s;
+}
+
 void set_option(Option *option, int opt_n, std::string opt_s) {
 	option->data = create_option(opt_n, opt_s);
+}
+
+void set_option(Option *option, std::string opt_n, std::string opt_s) {
+	option->data = create_namedoption(opt_n, opt_s);
 }
 
 void put_option(Option *option) {
