@@ -1,6 +1,7 @@
 #include "./stringutils.h"
 #include "vectorutils.h"
 #include<vector>
+#include<sstream>
 
 std::string wrap_str(std::string s, std::string a, std::string b)
 {
@@ -21,6 +22,18 @@ std::string repeat_str(std::string s, int times)
 	for (int i = 0; i < times; ++i)
 		f.append(s);
 	return f;
+}
+
+std::string len_str(std::string &s, int s_len, int len)
+{
+	std::stringstream sf;
+	for (int i = 0; i < s_len; ++i) {
+		sf << s[i];
+		if ((i % len) == 0) {
+			sf << "\n";
+		}
+	}
+	return sf.str();
 }
 
 bool starts_with(const std::string& str, const std::string& prefix)
@@ -49,4 +62,3 @@ bool str_empty(std::string s)
 {
 	return (s.empty());
 }
-

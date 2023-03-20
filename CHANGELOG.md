@@ -1,27 +1,43 @@
 # LibVerlim Changelog
 
----
+## Changes for version **0.75**
 
-## Changes for version **0.68**
+* An update for some UI library changes.
 
-* This update focuses on more smaller updates.
-
-Latest Changes Pull: [#103](https://github.com/Equinoxtic/libverlim/commit/3db4b3c63f776bc821169423acdc9dc493fff8ff)
+Latest Changes Pull: 
 
 ---
 
 ### New features
+
 ---
 
-* `cstrutils`, works the same way as `stringutils` alongside with new functions that modify strings, specifically: `_upstr()` (For uppercase strings) and `_lowstr()` (For lowercase strings).
-	+ NOTE: `stringutils` will eventually have functions similar to this very soon, so just wait. <3
-* New `version` command, displays the current version of "LibVerlim".
+* `uipos` library, acts as a backend for setting positions for positioning the `consoleui` elements.
+* New namespace for `consoleui` library, `ui`, the namespace trend is getting onto me now, eheh.
+* `option` has a new function for creating "named" options (`create_namedoption()`). Takes a string as the main parameter instead of an integer.
+* New `consoleui` elements, `prompt` and `tablelist`
 
 ### Updates
 
-* `keyinput` now uses `enums` instead of using `#define` macro.
-* `setuplib()` now updated to have custom *"compiling"* and *"compiled"* messages at startup.
-	+ Also removed the `continue` keyword thing, it just caused the other files to not compile so just stick with a slow startup for now until I find a fix for it.
-	+ Added a 150ms delay per each time that a file finishes compiling.
+---
+
+* Updated `libcommand` and `liboptions` to have a row system.
+* `typedef structs` have now been updated to the C++ standard.
+
+```cpp
+typedef struct Option {
+	// ...
+} Option;
+```
+
+* `option` also now has an updated look.
+
+```sh
+[N]: "option"
+```
+
+* Hotfixes to `resconfig` after the namespace change.
+* `seperator` has now an updated `formatted_seperator()` function, this new version has two new parameters `begin: string` and `end: string`. I think it's pretty self explanatory just from the names. `begin` puts a string on the beginning of the seperator, and `end` will put it on the end of the seperator.
+
 
 <!-- **[NOTE]** : This release may be still buggy since it's a big one so please let me know if there are any bugs!!! -->
