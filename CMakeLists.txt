@@ -22,6 +22,10 @@ set(VERLIM_ADDONS
 	addons/consoleui/dialoguebox.h
 	addons/consoleui/optionbox.cpp
 	addons/consoleui/optionbox.h
+	addons/consoleui/prompt.cpp
+	addons/consoleui/prompt.h
+	addons/consoleui/tablelist.cpp
+	addons/consoleui/tablelist.h
 	addons/consoleui/textbox.cpp
 	addons/consoleui/textbox.h
 	addons/consoleui/titleheader.cpp
