@@ -25,15 +25,15 @@ static void _toggle_option(std::string _o)
 		lsys::screenclear();
 
 		TitleHeader th;
-		set_header(&th, "Configuration", "Loader", "Prompt");
-		put_header(&th); lstd::f_seq("newln", 2);
+		ui::set_header(&th, 0, 0, "Configuration", "Loader", "Prompt");
+		ui::put_header(&th); lstd::f_seq("newln", 2);
 		
 		std::vector<std::string> vs = { "Toggle ", s, "?" };
 
 		OptionBox ob;
-		set_formattedoptionbox(&ob, ret_vector_s(vs), "default");
+		ui::set_formattedoptionbox(&ob, 0, 0, ret_vector_s(vs), "default");
 
-		put_optionbox(&ob);
+		ui::put_optionbox(&ob);
 
 		std::string o_in;
 		lstd::reads(o_in);
@@ -58,15 +58,15 @@ namespace states {
 	namespace loader {
 		inline static void create() {
 			OptionBox ob;
-			set_formattedoptionbox(&ob, "Select option", "input");
+			ui::set_formattedoptionbox(&ob, 0, 0, "Select option", "input");
 			TitleHeader th;
-			set_header(&th, "Configuration", "Loader");
+			ui::set_header(&th, 0, 0,  "Configuration", "Loader");
 			std::string loader_path_skip = "res/config/loader.txt";
 			std::string skip_s = lvfs::read_file(loader_path_skip);
 
 			lsys::screenclear();
 
-			put_header(&th); lstd::f_seq("newln", 2);
+			ui::put_header(&th); lstd::f_seq("newln", 2);
 
 			std::vector<std::string> options = {
 				"Skip Loader (Set to " + skip_s + ")",
@@ -77,7 +77,7 @@ namespace states {
 			lstd::f_seq("newln");
 
 			std::string o_in;
-			put_optionbox(&ob);
+			ui::put_optionbox(&ob);
 			lstd::reads(o_in);
 			if (!str_empty(o_in)) {
 				switch(std::stoi(o_in)) {

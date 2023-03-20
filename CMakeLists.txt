@@ -26,6 +26,7 @@ set(VERLIM_ADDONS
 	addons/consoleui/textbox.h
 	addons/consoleui/titleheader.cpp
 	addons/consoleui/titleheader.h
+	addons/consoleui/uipos.h
 	addons/libcommand/command.cpp
 	addons/libcommand/command.h
 	addons/libcommand/commandutils.cpp

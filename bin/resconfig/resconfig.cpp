@@ -14,9 +14,9 @@
 
 void _state_select() {
 	OptionBox ob;
-	set_formattedoptionbox(&ob, "Select Configuration", "input");
+	ui::set_formattedoptionbox(&ob, 0, 0, "Select Configuration", "input");
 	TitleHeader th;
-	set_header(&th, "Configuration");
+	ui::set_header(&th, 0, 0, "Configuration");
 	std::string s_in;
 
 	std::vector<std::string> state_options = {
@@ -26,13 +26,13 @@ void _state_select() {
 
 	lsys::screenclear();
 
-	put_header(&th); lstd::f_seq("newln", 2);
+	ui::put_header(&th); lstd::f_seq("newln", 2);
 
 	push_options_list(state_options);
 
 	lstd::f_seq("newln");
 
-	put_optionbox(&ob);
+	ui::put_optionbox(&ob);
 	lstd::reads(s_in);
 	if (!str_empty(s_in)) {
 		switch(std::stoi(s_in)) {

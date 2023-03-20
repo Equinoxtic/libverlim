@@ -8,8 +8,6 @@ A minimal console application library for C++
 
 ## Overview
 
----
-
 LibVerlim is a minimal console application library for C++
 
 It includes:
@@ -22,8 +20,6 @@ It includes:
 ... And more!
 
 ## Quick Notes
-
----
 
 Compiling LibVerlim from source will lead you to the console demo
 

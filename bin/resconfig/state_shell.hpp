@@ -30,13 +30,13 @@ static void _preset_inputter(int _type)
 			std::string c_inusr, c_inenv;
 			std::stringstream usr, env;
 			OptionBox ob_usr, ob_env;
-			set_formattedoptionbox(&ob_usr, "Input User String", "input");
-			set_formattedoptionbox(&ob_env, "Input ENV string", "input");
+			ui::set_formattedoptionbox(&ob_usr, 0, 0, "Input User String", "input");
+			ui::set_formattedoptionbox(&ob_env, 0, 0, "Input ENV string", "input");
 			
 			if (_type <= 6) {
-				put_optionbox(&ob_usr);
+				ui::put_optionbox(&ob_usr);
 				lstd::reads(c_inusr); usr << c_inusr;
-				put_optionbox(&ob_env);
+				ui::put_optionbox(&ob_env);
 				lstd::reads(c_inenv); env << c_inenv;
 			}
 
@@ -62,14 +62,14 @@ static void _preset_inputter(int _type)
 
 static void _open_presets() {
 	OptionBox ob;
-	set_formattedoptionbox(&ob, "Select Preset", "input");
+	ui::set_formattedoptionbox(&ob, 0, 0, "Select Preset", "input");
 	TitleHeader th;
-	set_header(&th, "Configuration", "Shell", "Preset Selector");
+	ui::set_header(&th, 0, 0, "Configuration", "Shell", "Preset Selector");
 	std::string s_in;
 
 	lsys::screenclear();
 
-	put_header(&th); lstd::f_seq("newln", 2);
+	ui::put_header(&th); lstd::f_seq("newln", 2);
 
 	std::vector<std::string> preset_options = {
 		"Default Shell (>)",
@@ -84,7 +84,7 @@ static void _open_presets() {
 
 	lstd::f_seq("newln");
 
-	put_optionbox(&ob);
+	ui::put_optionbox(&ob);
 	lstd::reads(s_in);
 	if (!str_empty(s_in)) {
 		_preset_inputter(std::stoi(s_in));
@@ -93,16 +93,16 @@ static void _open_presets() {
 
 static void _open_custom_input() {
 	OptionBox ob;
-	set_formattedoptionbox(&ob, "Input Custom Shell", "input");
+	ui::set_formattedoptionbox(&ob, 0, 0, "Input Custom Shell", "input");
 	TitleHeader th;
-	set_header(&th, "Configuration", "Shell", "Custom Configuration");
+	ui::set_header(&th, 0, 0, "Configuration", "Shell", "Custom Configuration");
 	std::string shell_in;
 
 	lsys::screenclear();
 
-	put_header(&th); lstd::f_seq("newln", 2);
+	ui::put_header(&th); lstd::f_seq("newln", 2);
 
-	put_optionbox(&ob);
+	ui::put_optionbox(&ob);
 	lstd::reads(shell_in);
 
 	std::string shell_path = "res/shell/customshell.txt";
@@ -116,14 +116,14 @@ static void _open_custom_input() {
 static void _list_options()
 {
 	OptionBox ob;
-	set_formattedoptionbox(&ob, "Choose Option", "input");
+	ui::set_formattedoptionbox(&ob, 0, 0, "Choose Option", "input");
 	TitleHeader th;
-	set_header(&th, "Configuration", "Shell");
+	ui::set_header(&th, 0, 0, "Configuration", "Shell");
 	std::string s_in;
 
 	lsys::screenclear();
 
-	put_header(&th); lstd::f_seq("newln", 2);
+	ui::put_header(&th); lstd::f_seq("newln", 2);
 
 	std::vector<std::string> options_list = {
 		"Preset",
@@ -134,7 +134,7 @@ static void _list_options()
 
 	lstd::f_seq("newln");
 
-	put_optionbox(&ob);
+	ui::put_optionbox(&ob);
 	lstd::reads(s_in);
 	if (!str_empty(s_in)) {
 		switch(std::stoi(s_in)) {
@@ -149,9 +149,9 @@ namespace states {
 	namespace shell {
 		inline static void create() {
 			TitleHeader th;
-			set_header(&th, "Configuration", "Shell");
+			ui::set_header(&th, 0, 0, "Configuration", "Shell");
 			lsys::screenclear();
-			put_header(&th); lstd::f_seq("newln", 2);
+			ui::put_header(&th); lstd::f_seq("newln", 2);
 			_list_options();
 		}
 	}
