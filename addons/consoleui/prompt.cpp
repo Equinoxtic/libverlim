@@ -8,15 +8,17 @@
 
 namespace ui {
 	std::string create_prompt(std::string main_s, std::string prompt_s, int x, int y) {
+		std::string _pos = ui::set_pos(x, y);
 		std::string s;
 		std::stringstream sf;
 		if (!str_empty(main_s) && !str_empty(prompt_s)) {
 			std::vector<std::string> vs = {
-				wrap_str(main_s, "[", "]"), "\n\n> ", quote_str(prompt_s)
+				_pos, wrap_str(main_s, "[", "]"), 
+				_pos, "\n\n> ", quote_str(prompt_s)
 			};
 			s = ret_vector_s(vs);
 		}
-		sf << ui::set_pos(x, y) << s;
+		sf << s;
 		return sf.str();
 	}
 
