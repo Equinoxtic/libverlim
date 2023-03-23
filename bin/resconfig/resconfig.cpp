@@ -11,6 +11,7 @@
 #include "../../limstd/limio/limstdio.h"
 #include "../../limstd/limio/limioutils.h"
 #include "../../lib/sys/limbuiltin.h"
+#include "../../fs/fileutils.h"
 
 void _state_select() {
 	OptionBox ob;
@@ -44,6 +45,10 @@ void _state_select() {
 }
 
 int main(int argc, char **argv) {
-	_state_select();
+	if (lvfs::path_exists("res/") == 0) {
+		_state_select();
+	} else {
+		std::cout << "\n\"res\" directory is unavailable.\n> To download the resource files, clone this repository in your current directory.\n";
+	}
 	return 0;
 }
