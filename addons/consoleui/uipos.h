@@ -32,7 +32,8 @@ namespace ui {
 		std::stringstream ss;
 		std::vector<std::string> vs;
 		
-		vs.push_back(set_pos_x(x)); vs.push_back(set_pos_y(y));
+		vs.push_back(set_pos_y(y));
+		vs.push_back(set_pos_x(x));
 
 		ss << ret_vector_s(vs);
 
