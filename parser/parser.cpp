@@ -9,6 +9,7 @@
 #include<iostream>
 #include<vector>
 #include "bincmds.h"
+#include "ccmds.h"
 
 void output_input_details(std::string input_str) {
 	std::cout << "\nRan command: " + input_str << "\nParsing command: " + input_str;
@@ -20,19 +21,6 @@ void _run_exec(std::string c_cmd) {
 	#else
 	lsys::sysexec("./" + c_cmd);
 	#endif
-}
-
-void _cmp_input(std::string in) {
-	// BUILT-IN
-	if (compare_str(in, "clear")) {
-		lsys::screenclear();
-	} else if (compare_str(in, "exit")) {
-		std::cout << "\0";
-	} else if (compare_str(in, "res-install")) {
-		lsys::sysexec("git clone https://github.com/Equinoxtic/res.git");
-	} else if (compare_str(in, "version")) {
-		std::cout << "VERSION: " << get_lib_version();
-	} else { lsys::sysexec(in); }
 }
 
 void parse_command(std::string cinput)
