@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<vector>
+#include<cmath>
 #include "../../addons/consoleui/titleheader.h"
 #include "../../addons/consoleui/optionbox.h"
 #include "../../addons/liboptions/option.h"
@@ -80,9 +81,13 @@ namespace states {
 			ui::put_optionbox(&ob);
 			lstd::reads(o_in);
 			if (!str_empty(o_in)) {
-				switch(std::stoi(o_in)) {
-					case 1: _toggle_option("loader-skip"); break;
-					default: std::cout << "\0"; break;
+				if (!nan(o_in.c_str())) {
+					switch(std::stoi(o_in)) {
+						case 1: _toggle_option("loader-skip"); break;
+						default: std::cout << "\0"; break;
+					}
+				} else {
+					std::cout << "\0";
 				}
 			}
 		}

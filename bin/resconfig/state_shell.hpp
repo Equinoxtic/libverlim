@@ -5,6 +5,7 @@
 #include<string>
 #include<vector>
 #include<sstream>
+#include<cmath>
 #include "../../addons/consoleui/titleheader.h"
 #include "../../addons/consoleui/optionbox.h"
 #include "../../addons/liboptions/option.h"
@@ -87,7 +88,11 @@ static void _open_presets() {
 	ui::put_optionbox(&ob);
 	lstd::reads(s_in);
 	if (!str_empty(s_in)) {
-		_preset_inputter(std::stoi(s_in));
+		if (!nan(s_in.c_str())) {
+			_preset_inputter(std::stoi(s_in));
+		} else {
+			std::cout << "\0";
+		}
 	}
 }
 
@@ -137,10 +142,14 @@ static void _list_options()
 	ui::put_optionbox(&ob);
 	lstd::reads(s_in);
 	if (!str_empty(s_in)) {
-		switch(std::stoi(s_in)) {
-			case 1: _open_presets(); break;
-			case 2: _open_custom_input(); break;
-			default: _open_presets(); break;
+		if (!nan(s_in.c_str())) {
+			switch(std::stoi(s_in)) {
+				case 1: _open_presets(); break;
+				case 2: _open_custom_input(); break;
+				default: _open_presets(); break;
+			}
+		} else {
+			std::cout << "\0";
 		}
 	}
 }

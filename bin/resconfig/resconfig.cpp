@@ -2,6 +2,7 @@
 #include<sstream>
 #include<vector>
 #include<string>
+#include<cmath>
 #include "statehandler.hpp"
 #include "../../lib/stringutils.h"
 #include "../../addons/consoleui/optionbox.h"
@@ -36,10 +37,14 @@ void _state_select() {
 	ui::put_optionbox(&ob);
 	lstd::reads(s_in);
 	if (!str_empty(s_in)) {
-		switch(std::stoi(s_in)) {
-			case 1: states::loader::create(); break;
-			case 2: states::shell::create(); break;
-			default: std::cout << "\nFailed Configuration. Try again.\n\n"; break;
+		if (!nan(s_in.c_str())) {
+			switch(std::stoi(s_in)) {
+				case 1: states::loader::create(); break;
+				case 2: states::shell::create(); break;
+				default: std::cout << "\nFailed Configuration. Try again.\n\n"; break;
+			}
+		} else {
+			std::cout << "\nExiting...\n\n";
 		}
 	}
 }
@@ -48,7 +53,7 @@ int main(int argc, char **argv) {
 	if (lvfs::path_exists("res/") == 0) {
 		_state_select();
 	} else {
-		std::cout << "\n\"res\" directory is unavailable.\n> To download the resource files, clone this repository in your current directory.\n";
+		std::cout << "\n\"res\" directory is unavailable.\n> To download the resource files, clone this repository: [https://github.com/Equinoxtic/res] in your current directory.\n\n";
 	}
 	return 0;
 }
