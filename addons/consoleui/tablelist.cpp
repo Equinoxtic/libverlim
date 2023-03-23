@@ -21,12 +21,13 @@ namespace ui {
 
 	std::string create_tablelist_object(std::string s, int x, int y) {
 		std::string _pos = ui::set_pos(x, y);
+		std::string _x_pos = ui::set_pos_x(x);
 		std::string _s;
 		std::stringstream sf;
 		if (!str_empty(s)) {
 			std::vector<std::string> vs = {
 				_pos, s, "\n", 
-				_pos, repeat_str("-", 45)
+				_x_pos, repeat_str("-", 45)
 			};
 			_s = ret_vector_s(vs);
 		}
@@ -41,8 +42,9 @@ namespace ui {
 	std::string create_tablelist_vec(std::vector<std::string> vec_s, int x, int y, int per) {
 		std::stringstream sf;
 		std::string _pos = ui::set_pos(x, y);
+		std::string _x_pos = ui::set_pos_x(x);
 		for (int i = 0; i < vec_s.size(); ++i) {
-			sf << _pos << vec_s[i] << (((i % per) == 0) ?"\n" + _pos + repeat_str("-", 45) : "");
+			sf << _pos << vec_s[i] << (((i % per) == 0) ? "\n" + _x_pos + repeat_str("-", 45) : "");
 		}
 		return sf.str();
 	}
