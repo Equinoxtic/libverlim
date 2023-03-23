@@ -29,9 +29,9 @@ namespace lvfs {
 		if (!str_empty(_path)) c_path = _path.c_str();
 
 		if (stat(c_path, &info) == 0 && !(info.st_mode & S_IFDIR)) {
-			res = 0;
-		} else {
 			res = 1;
+		} else {
+			res = 0;
 		}
 
 		return res;
