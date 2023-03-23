@@ -4,7 +4,7 @@
 
 * An update for some UI library changes.
 
-Latest Changes Pull: 
+Latest Changes Pull: ([#110](https://github.com/Equinoxtic/libverlim/pull/110))
 
 ---
 
