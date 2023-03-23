@@ -27,12 +27,13 @@ namespace lvfs {
 		int res = 0;
 		const char* c_path;
 		if (!str_empty(_path)) c_path = _path.c_str();
-		if (stat(c_path, &info) != 0)
+
+		if (stat(c_path, &info) == 0 && !(info.st_mode & S_IFDIR)) {
 			res = 0;
-		else if (info.st_mode & S_IFDIR)
+		} else {
 			res = 1;
-		else
-			res = 0;
+		}
+
 		return res;
 	}
 }
