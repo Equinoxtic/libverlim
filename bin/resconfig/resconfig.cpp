@@ -37,23 +37,15 @@ void _state_select() {
 	ui::put_optionbox(&ob);
 	lstd::reads(s_in);
 	if (!str_empty(s_in)) {
-		if (!nan(s_in.c_str())) {
-			switch(std::stoi(s_in)) {
-				case 1: states::loader::create(); break;
-				case 2: states::shell::create(); break;
-				default: std::cout << "\nFailed Configuration. Try again.\n\n"; break;
-			}
-		} else {
-			std::cout << "\nExiting...\n\n";
+		switch(std::stoi(s_in)) {
+			case 1: states::loader::create(); break;
+			case 2: states::shell::create(); break;
+			default: std::cout << "\nFailed Configuration. Try again.\n\n"; break;
 		}
 	}
 }
 
 int main(int argc, char **argv) {
-	if (lvfs::path_exists("res/") == 0) {
-		_state_select();
-	} else {
-		std::cout << "\n\"res\" directory is unavailable.\n> To download the resource files, clone this repository: [https://github.com/Equinoxtic/res] in your current directory.\n\n";
-	}
+	_state_select();
 	return 0;
 }

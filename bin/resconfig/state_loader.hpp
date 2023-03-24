@@ -81,13 +81,9 @@ namespace states {
 			ui::put_optionbox(&ob);
 			lstd::reads(o_in);
 			if (!str_empty(o_in)) {
-				if (!nan(o_in.c_str())) {
-					switch(std::stoi(o_in)) {
-						case 1: _toggle_option("loader-skip"); break;
-						default: std::cout << "\0"; break;
-					}
-				} else {
-					std::cout << "\0";
+				switch(std::stoi(o_in)) {
+					case 1: _toggle_option("loader-skip"); break;
+					default: std::cout << "\0"; break;
 				}
 			}
 		}
