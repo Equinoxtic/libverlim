@@ -3,5 +3,8 @@
 .vs/
 .vscode/
 [Rr]es/
+[Ss]ource/
+[Pp]arser/
+[Bb]in/
 *.exe
 *.o
